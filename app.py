@@ -230,7 +230,8 @@ def generate_from_mermas(mermas_path, tpl_art_path, tpl_chk_path, out_path, orig
     map_cols = [2, 3, 4, 5, 6, 7, 9, 10]
 
     mc_map = {}
-    val = ws_top.cell(row=r, column=mc_idx).value
+    for r in range(2, ws_top.max_row + 1):  
+        val = ws_top.cell(row=r, column=mc_idx).value
         if val is None:
             continue
 
