@@ -244,7 +244,9 @@ def generate_from_mermas(mermas_path, tpl_art_path, tpl_chk_path, out_path, orig
             mapped.append(ws_top.cell(row=r, column=col).value if col <= ws_top.max_column else None)
 
         fam = ws_top.cell(row=r, column=fam_idx).value if fam_idx and fam_idx <= ws_top.max_column else None
-        mc_map[key] = {'mapped': mapped, 'fam': fam, 'row': r}
+        valor_k = ws_top.cell(row=r, column=11).value or ""
+
+      mc_map[key] = {'mapped': mapped, 'fam': fam, 'row': r,'col_k': valor_k}
 
     wb_art = load_workbook(tpl_art_path, data_only=False)
     wb_chk = load_workbook(tpl_chk_path, data_only=False)
@@ -274,6 +276,7 @@ def generate_from_mermas(mermas_path, tpl_art_path, tpl_chk_path, out_path, orig
         new_mc = copy_sheet_exact(tpl_art_sheet, wb_out, safe)
 
         new_mc.cell(row=4, column=2).value = key
+        new_mc.cell(row=11, column=2).value = mc_map[key]['col_k']
         if mc_map[key]['fam'] is not None:
             new_mc.cell(row=5, column=2).value = mc_map[key]['fam']
 
