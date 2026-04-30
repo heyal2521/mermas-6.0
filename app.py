@@ -230,8 +230,7 @@ def generate_from_mermas(mermas_path, tpl_art_path, tpl_chk_path, out_path, orig
     map_cols = [2, 3, 4, 5, 6, 7, 9, 10]
 
     mc_map = {}
-    for r in range(2, ws_top.max_row + 1):
-        val = ws_top.cell(row=r, column=mc_idx).value
+    val = ws_top.cell(row=r, column=mc_idx).value
         if val is None:
             continue
 
@@ -246,7 +245,12 @@ def generate_from_mermas(mermas_path, tpl_art_path, tpl_chk_path, out_path, orig
         fam = ws_top.cell(row=r, column=fam_idx).value if fam_idx and fam_idx <= ws_top.max_column else None
         valor_k = ws_top.cell(row=r, column=11).value or ""
 
-      mc_map[key] = {'mapped': mapped, 'fam': fam, 'row': r,'col_k': valor_k}
+        mc_map[key] = {
+            'mapped': mapped,
+            'fam': fam,
+            'row': r,
+            'col_k': valor_k
+        }
 
     wb_art = load_workbook(tpl_art_path, data_only=False)
     wb_chk = load_workbook(tpl_chk_path, data_only=False)
