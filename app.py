@@ -491,6 +491,7 @@ def _load_saved_history_from_github():
     last_label = None
 
     files = _list_saved_history_files()
+    files=files[-10:]
     for item in files:
         repo_path = item.get("path")
         if not repo_path:
