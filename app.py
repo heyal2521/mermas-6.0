@@ -2000,7 +2000,7 @@ def _render_dashboard_html(rows, total_models, new_models, repeated_models, pers
 
 
 @app.route('/dashboard', methods=['GET'])
-def dashboard_saved():
+def dashboard_resumen():
     records = {}
     order = []
     last_seen_models = set()
