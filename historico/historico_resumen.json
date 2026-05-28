@@ -1,6 +1,6 @@
 {
-  "updated_at": null,
-  "total_files": 10,
+  "updated_at": "2026-05-28T00:25:14.067294Z",
+  "total_files": 11,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -11,7 +11,8 @@
     "SEM 20 C2",
     "SEM 20 C2",
     "SEM 21 C1",
-    "SEM 21 C2"
+    "SEM 21 C2",
+    "SEM 15 C2"
   ],
   "records": {
     "0387/066": {
@@ -24,14 +25,15 @@
       "family": "CAMISA"
     },
     "9929/141": {
-      "count": 3,
+      "count": 4,
       "labels": [
         "SEM 18 C1",
         "SEM 18 C2",
-        "SEM 20 C1"
+        "SEM 20 C1",
+        "SEM 15 C2"
       ],
       "first_label": "SEM 18 C1",
-      "last_label": "SEM 20 C1",
+      "last_label": "SEM 15 C2",
       "family": "PANTALON"
     },
     "0085/316": {
@@ -228,12 +230,13 @@
       "family": "BERMUDA"
     },
     "9929/249": {
-      "count": 2,
+      "count": 3,
       "labels": [
-        "SEM 20 C2"
+        "SEM 20 C2",
+        "SEM 15 C2"
       ],
       "first_label": "SEM 20 C2",
-      "last_label": "SEM 20 C2",
+      "last_label": "SEM 15 C2",
       "family": "PANTALON"
     },
     "4813/365": {
@@ -325,217 +328,46 @@
       "first_label": "SEM 21 C2",
       "last_label": "SEM 21 C2",
       "family": "CAMISA"
+    },
+    "8372/041": {
+      "count": 1,
+      "labels": [
+        "SEM 15 C2"
+      ],
+      "first_label": "SEM 15 C2",
+      "last_label": "SEM 15 C2",
+      "family": "PANTALON"
+    },
+    "0387/060": {
+      "count": 1,
+      "labels": [
+        "SEM 15 C2"
+      ],
+      "first_label": "SEM 15 C2",
+      "last_label": "SEM 15 C2",
+      "family": "CAMISA"
+    },
+    "8372/111": {
+      "count": 1,
+      "labels": [
+        "SEM 15 C2"
+      ],
+      "first_label": "SEM 15 C2",
+      "last_label": "SEM 15 C2",
+      "family": "PANTALON"
     }
   },
   "last_top": {
-    "label": "SEM 21 C2",
-    "filename": "",
+    "label": "SEM 15 C2",
+    "filename": "TOP MERMAS S15 C2.xlsx",
     "rows": [
       {
-        "mc": "0387/066",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "9929/141",
-        "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "0085/316",
-        "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2753/530",
-        "family": "BLAZER",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "1821/027",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "0387/072",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4387/023",
-        "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "5039/394",
-        "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2753/228",
+        "mc": "8372/041",
         "family": "PANTALON",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/421",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7200/025",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2349/576",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/150",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/222",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "1058/006",
-        "family": "VESTIDO",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "1008/221",
-        "family": "FALDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4387/110",
-        "family": "FALDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2349/377",
-        "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4387/221",
-        "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8073/523",
-        "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "0264/070",
-        "family": "CAMISETA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/449",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/244",
-        "family": "BERMUDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 21 C2",
+        "ciclos": "SEM 15 C2",
         "appears_in_last_top": "Sí"
       },
       {
@@ -543,103 +375,40 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
+        "count": 3,
+        "ciclos": "SEM 15 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "4813/365",
-        "family": "CAMISETA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
+        "mc": "0387/060",
+        "family": "CAMISA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 15 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "4387/086",
+        "mc": "9929/141",
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 21 C2",
+        "count": 4,
+        "ciclos": "SEM 15 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "4387/106",
+        "mc": "8372/111",
         "family": "PANTALON",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4006/817",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7969/223",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "6009/571",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4387/092",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "6005/558",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7728/753",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4387/021",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 21 C2",
+        "ciclos": "SEM 15 C2",
         "appears_in_last_top": "Sí"
       }
     ],
-    "total_models": 34,
-    "new_models": 22,
-    "repeated_models": 12
+    "total_models": 5,
+    "new_models": 3,
+    "repeated_models": 2
   }
 }
