@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-28T15:30:20.540216Z",
-  "total_files": 12,
+  "updated_at": "2026-05-30T14:39:45.866103Z",
+  "total_files": 13,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -13,7 +13,8 @@
     "SEM 21 C1",
     "SEM 21 C2",
     "SEM 15 C2",
-    "SEM 22 C1"
+    "SEM 22 C1",
+    "SEM 22 C2"
   ],
   "records": {
     "0387/066": {
@@ -193,12 +194,13 @@
       "family": "CAMISA"
     },
     "8073/523": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 20 C1"
+        "SEM 20 C1",
+        "SEM 22 C2"
       ],
       "first_label": "SEM 20 C1",
-      "last_label": "SEM 20 C1",
+      "last_label": "SEM 22 C2",
       "family": "BERMUDA"
     },
     "0264/070": {
@@ -393,55 +395,91 @@
       "first_label": "SEM 22 C1",
       "last_label": "SEM 22 C1",
       "family": "VESTIDO"
+    },
+    "3293/060": {
+      "count": 1,
+      "labels": [
+        "SEM 22 C2"
+      ],
+      "first_label": "SEM 22 C2",
+      "last_label": "SEM 22 C2",
+      "family": "VESTIDO"
+    },
+    "2231/399": {
+      "count": 1,
+      "labels": [
+        "SEM 22 C2"
+      ],
+      "first_label": "SEM 22 C2",
+      "last_label": "SEM 22 C2",
+      "family": "CAMISA"
+    },
+    "8741/230": {
+      "count": 1,
+      "labels": [
+        "SEM 22 C2"
+      ],
+      "first_label": "SEM 22 C2",
+      "last_label": "SEM 22 C2",
+      "family": "VESTIDO"
+    },
+    "2963/709": {
+      "count": 1,
+      "labels": [
+        "SEM 22 C2"
+      ],
+      "first_label": "SEM 22 C2",
+      "last_label": "SEM 22 C2",
+      "family": "PANTALON"
     }
   },
   "last_top": {
-    "label": "SEM 22 C1",
-    "filename": "Copia de TOP MERMAS S22 C1.xlsx",
+    "label": "SEM 22 C2",
+    "filename": "TOP MERMAS S22 C2.xlsx",
     "rows": [
       {
-        "mc": "2893/454",
-        "family": "CHALECO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 22 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7751/784",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 22 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "3115/734",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 22 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/244",
-        "family": "BERMUDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 22 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2921/476",
+        "mc": "3293/060",
         "family": "VESTIDO",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 22 C1",
+        "ciclos": "SEM 22 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "2231/399",
+        "family": "CAMISA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 22 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8741/230",
+        "family": "VESTIDO",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 22 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8073/523",
+        "family": "BERMUDA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 22 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "2963/709",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 22 C2",
         "appears_in_last_top": "Sí"
       }
     ],
