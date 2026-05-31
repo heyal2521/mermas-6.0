@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-30T14:39:45.866103Z",
-  "total_files": 13,
+  "updated_at": "2026-05-31T06:54:47.615461Z",
+  "total_files": 14,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -14,6 +14,7 @@
     "SEM 21 C2",
     "SEM 15 C2",
     "SEM 22 C1",
+    "SEM 22 C2",
     "SEM 22 C2"
   ],
   "records": {
@@ -194,7 +195,7 @@
       "family": "CAMISA"
     },
     "8073/523": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 20 C1",
         "SEM 22 C2"
@@ -397,7 +398,7 @@
       "family": "VESTIDO"
     },
     "3293/060": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 22 C2"
       ],
@@ -406,7 +407,7 @@
       "family": "VESTIDO"
     },
     "2231/399": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 22 C2"
       ],
@@ -415,7 +416,7 @@
       "family": "CAMISA"
     },
     "8741/230": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 22 C2"
       ],
@@ -424,7 +425,7 @@
       "family": "VESTIDO"
     },
     "2963/709": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 22 C2"
       ],
@@ -440,27 +441,27 @@
       {
         "mc": "3293/060",
         "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 22 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "2231/399",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 22 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "8741/230",
         "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 22 C2",
         "appears_in_last_top": "Sí"
       },
@@ -469,22 +470,22 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 22 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "2963/709",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 22 C2",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 4,
-    "repeated_models": 1
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
