@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-06T02:54:59.033952Z",
-  "total_files": 16,
+  "updated_at": "2026-06-06T02:55:07.523029Z",
+  "total_files": 17,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -17,6 +17,7 @@
     "SEM 22 C2",
     "SEM 22 C2",
     "SEM 23 C1",
+    "SEM 23 C2",
     "SEM 23 C2"
   ],
   "records": {
@@ -197,7 +198,7 @@
       "family": "CAMISA"
     },
     "8073/523": {
-      "count": 5,
+      "count": 6,
       "labels": [
         "SEM 20 C1",
         "SEM 22 C2",
@@ -330,7 +331,7 @@
       "family": "PANTALON"
     },
     "4387/021": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 21 C2",
         "SEM 23 C2"
@@ -421,7 +422,7 @@
       "family": "CAMISA"
     },
     "8741/230": {
-      "count": 3,
+      "count": 4,
       "labels": [
         "SEM 22 C2",
         "SEM 23 C2"
@@ -476,7 +477,7 @@
       "family": "VESTIDO"
     },
     "8372/225": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 23 C2"
       ],
@@ -485,7 +486,7 @@
       "family": "BERMUDA"
     },
     "0387/069": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 23 C2"
       ],
@@ -501,18 +502,18 @@
       {
         "mc": "8372/225",
         "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "0387/069",
         "family": "MONO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       },
@@ -521,7 +522,7 @@
         "family": "CAMISA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       },
@@ -530,7 +531,7 @@
         "family": "VESTIDO",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 3,
+        "count": 4,
         "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       },
@@ -539,13 +540,13 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
+        "count": 6,
         "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 2,
-    "repeated_models": 3
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
