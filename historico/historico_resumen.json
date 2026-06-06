@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-03T12:56:16.651356Z",
-  "total_files": 15,
+  "updated_at": "2026-06-06T02:54:59.033952Z",
+  "total_files": 16,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -16,7 +16,8 @@
     "SEM 22 C1",
     "SEM 22 C2",
     "SEM 22 C2",
-    "SEM 23 C1"
+    "SEM 23 C1",
+    "SEM 23 C2"
   ],
   "records": {
     "0387/066": {
@@ -196,14 +197,15 @@
       "family": "CAMISA"
     },
     "8073/523": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 20 C1",
         "SEM 22 C2",
-        "SEM 23 C1"
+        "SEM 23 C1",
+        "SEM 23 C2"
       ],
       "first_label": "SEM 20 C1",
-      "last_label": "SEM 23 C1",
+      "last_label": "SEM 23 C2",
       "family": "BERMUDA"
     },
     "0264/070": {
@@ -328,12 +330,13 @@
       "family": "PANTALON"
     },
     "4387/021": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 21 C2"
+        "SEM 21 C2",
+        "SEM 23 C2"
       ],
       "first_label": "SEM 21 C2",
-      "last_label": "SEM 21 C2",
+      "last_label": "SEM 23 C2",
       "family": "CAMISA"
     },
     "8372/041": {
@@ -418,12 +421,13 @@
       "family": "CAMISA"
     },
     "8741/230": {
-      "count": 2,
+      "count": 3,
       "labels": [
-        "SEM 22 C2"
+        "SEM 22 C2",
+        "SEM 23 C2"
       ],
       "first_label": "SEM 22 C2",
-      "last_label": "SEM 22 C2",
+      "last_label": "SEM 23 C2",
       "family": "VESTIDO"
     },
     "2963/709": {
@@ -470,19 +474,64 @@
       "first_label": "SEM 23 C1",
       "last_label": "SEM 23 C1",
       "family": "VESTIDO"
+    },
+    "8372/225": {
+      "count": 1,
+      "labels": [
+        "SEM 23 C2"
+      ],
+      "first_label": "SEM 23 C2",
+      "last_label": "SEM 23 C2",
+      "family": "BERMUDA"
+    },
+    "0387/069": {
+      "count": 1,
+      "labels": [
+        "SEM 23 C2"
+      ],
+      "first_label": "SEM 23 C2",
+      "last_label": "SEM 23 C2",
+      "family": "MONO"
     }
   },
   "last_top": {
-    "label": "SEM 23 C1",
-    "filename": "Copia de TOP MERMAS S23 C1.xlsx",
+    "label": "SEM 23 C2",
+    "filename": "TOP MERMAS S23 C2.xlsx",
     "rows": [
       {
-        "mc": "8741/238",
-        "family": "CAMISA",
+        "mc": "8372/225",
+        "family": "BERMUDA",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 23 C1",
+        "ciclos": "SEM 23 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "0387/069",
+        "family": "MONO",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 23 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "4387/021",
+        "family": "CAMISA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 23 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8741/230",
+        "family": "VESTIDO",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 3,
+        "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       },
       {
@@ -490,40 +539,13 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 23 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "3046/221",
-        "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 23 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "3086/694",
-        "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 23 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "0264/475",
-        "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 23 C1",
+        "count": 5,
+        "ciclos": "SEM 23 C2",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 4,
-    "repeated_models": 1
+    "new_models": 2,
+    "repeated_models": 3
   }
 }
