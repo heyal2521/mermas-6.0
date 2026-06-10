@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-06T09:32:05.148618Z",
-  "total_files": 18,
+  "updated_at": "2026-06-10T05:37:52.632576Z",
+  "total_files": 19,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -19,7 +19,8 @@
     "SEM 23 C1",
     "SEM 23 C2",
     "SEM 23 C2",
-    "SEM 23 C2"
+    "SEM 23 C2",
+    "SEM 24 C1"
   ],
   "records": {
     "0387/066": {
@@ -221,23 +222,25 @@
       "family": "CAMISETA"
     },
     "8372/449": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 20 C1"
+        "SEM 20 C1",
+        "SEM 24 C1"
       ],
       "first_label": "SEM 20 C1",
-      "last_label": "SEM 20 C1",
+      "last_label": "SEM 24 C1",
       "family": "PANTALON"
     },
     "8372/244": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 20 C2",
         "SEM 21 C1",
-        "SEM 22 C1"
+        "SEM 22 C1",
+        "SEM 24 C1"
       ],
       "first_label": "SEM 20 C2",
-      "last_label": "SEM 22 C1",
+      "last_label": "SEM 24 C1",
       "family": "BERMUDA"
     },
     "9929/249": {
@@ -494,60 +497,87 @@
       "first_label": "SEM 23 C2",
       "last_label": "SEM 23 C2",
       "family": "MONO"
+    },
+    "9929/024": {
+      "count": 1,
+      "labels": [
+        "SEM 24 C1"
+      ],
+      "first_label": "SEM 24 C1",
+      "last_label": "SEM 24 C1",
+      "family": "BERMUDA"
+    },
+    "8372/029": {
+      "count": 1,
+      "labels": [
+        "SEM 24 C1"
+      ],
+      "first_label": "SEM 24 C1",
+      "last_label": "SEM 24 C1",
+      "family": "PANTALON"
+    },
+    "7969/053": {
+      "count": 1,
+      "labels": [
+        "SEM 24 C1"
+      ],
+      "first_label": "SEM 24 C1",
+      "last_label": "SEM 24 C1",
+      "family": "CAMISA"
     }
   },
   "last_top": {
-    "label": "SEM 23 C2",
-    "filename": "TOP MERMAS S23 C2.xlsx",
+    "label": "SEM 24 C1",
+    "filename": "Copia de TOP MERMAS S24 C1.xlsx",
     "rows": [
       {
-        "mc": "8372/225",
+        "mc": "9929/024",
         "family": "BERMUDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 23 C2",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "0387/069",
-        "family": "MONO",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 23 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "4387/021",
-        "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 23 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8741/230",
-        "family": "VESTIDO",
+        "mc": "8372/244",
+        "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
         "count": 5,
-        "ciclos": "SEM 23 C2",
+        "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "8073/523",
-        "family": "BERMUDA",
+        "mc": "8372/449",
+        "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 7,
-        "ciclos": "SEM 23 C2",
+        "count": 2,
+        "ciclos": "SEM 24 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8372/029",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 24 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7969/053",
+        "family": "CAMISA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 0,
-    "repeated_models": 5
+    "new_models": 3,
+    "repeated_models": 2
   }
 }
