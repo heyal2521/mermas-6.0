@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-10T05:37:52.632576Z",
-  "total_files": 19,
+  "updated_at": "2026-06-11T17:30:14.774620Z",
+  "total_files": 20,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -20,6 +20,7 @@
     "SEM 23 C2",
     "SEM 23 C2",
     "SEM 23 C2",
+    "SEM 24 C1",
     "SEM 24 C1"
   ],
   "records": {
@@ -222,7 +223,7 @@
       "family": "CAMISETA"
     },
     "8372/449": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 20 C1",
         "SEM 24 C1"
@@ -232,7 +233,7 @@
       "family": "PANTALON"
     },
     "8372/244": {
-      "count": 5,
+      "count": 6,
       "labels": [
         "SEM 20 C2",
         "SEM 21 C1",
@@ -499,7 +500,7 @@
       "family": "MONO"
     },
     "9929/024": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 24 C1"
       ],
@@ -508,7 +509,7 @@
       "family": "BERMUDA"
     },
     "8372/029": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 24 C1"
       ],
@@ -517,7 +518,7 @@
       "family": "PANTALON"
     },
     "7969/053": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 24 C1"
       ],
@@ -528,14 +529,14 @@
   },
   "last_top": {
     "label": "SEM 24 C1",
-    "filename": "Copia de TOP MERMAS S24 C1.xlsx",
+    "filename": "TOP MERMAS S24 C1.xlsx",
     "rows": [
       {
         "mc": "9929/024",
         "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       },
@@ -544,7 +545,7 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
+        "count": 6,
         "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       },
@@ -553,31 +554,31 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "8372/029",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7969/053",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 24 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 3,
-    "repeated_models": 2
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
