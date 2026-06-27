@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-24T03:37:05.767100Z",
-  "total_files": 25,
+  "updated_at": "2026-06-27T09:31:51.151846Z",
+  "total_files": 26,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -26,7 +26,8 @@
     "SEM 24 C2",
     "SEM 25 C1",
     "SEM 25 C2",
-    "SEM 26 C1"
+    "SEM 26 C1",
+    "SEM 26 C2"
   ],
   "records": {
     "0387/066": {
@@ -208,16 +209,17 @@
       "family": "CAMISA"
     },
     "8073/523": {
-      "count": 8,
+      "count": 9,
       "labels": [
         "SEM 20 C1",
         "SEM 22 C2",
         "SEM 23 C1",
         "SEM 23 C2",
-        "SEM 26 C1"
+        "SEM 26 C1",
+        "SEM 26 C2"
       ],
       "first_label": "SEM 20 C1",
-      "last_label": "SEM 26 C1",
+      "last_label": "SEM 26 C2",
       "family": "BERMUDA"
     },
     "0264/070": {
@@ -570,12 +572,13 @@
       "family": "VESTIDO"
     },
     "8372/472": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 25 C2"
+        "SEM 25 C2",
+        "SEM 26 C2"
       ],
       "first_label": "SEM 25 C2",
-      "last_label": "SEM 25 C2",
+      "last_label": "SEM 26 C2",
       "family": "BERMUDA"
     },
     "7802/398": {
@@ -615,26 +618,45 @@
       "family": "PANTALON"
     },
     "2753/027": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 26 C1"
+        "SEM 26 C1",
+        "SEM 26 C2"
       ],
       "first_label": "SEM 26 C1",
-      "last_label": "SEM 26 C1",
+      "last_label": "SEM 26 C2",
       "family": "PANTALON"
+    },
+    "7911/576": {
+      "count": 1,
+      "labels": [
+        "SEM 26 C2"
+      ],
+      "first_label": "SEM 26 C2",
+      "last_label": "SEM 26 C2",
+      "family": "PANTALON"
+    },
+    "1608/322": {
+      "count": 1,
+      "labels": [
+        "SEM 26 C2"
+      ],
+      "first_label": "SEM 26 C2",
+      "last_label": "SEM 26 C2",
+      "family": "CAMISA"
     }
   },
   "last_top": {
-    "label": "SEM 26 C1",
-    "filename": "TOP MERMAS S26 C1.xlsx",
+    "label": "SEM 26 C2",
+    "filename": "TOP MERMAS S26 C2.xlsx",
     "rows": [
       {
-        "mc": "9929/024",
+        "mc": "8372/472",
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 26 C1",
+        "count": 2,
+        "ciclos": "SEM 26 C2",
         "appears_in_last_top": "Sí"
       },
       {
@@ -642,35 +664,35 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 8,
-        "ciclos": "SEM 26 C1",
+        "count": 9,
+        "ciclos": "SEM 26 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "9929/190",
+        "mc": "7911/576",
         "family": "PANTALON",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 26 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2157/227",
-        "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 26 C1",
+        "ciclos": "SEM 26 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "2753/027",
         "family": "PANTALON",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 26 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "1608/322",
+        "family": "CAMISA",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 26 C1",
+        "ciclos": "SEM 26 C2",
         "appears_in_last_top": "Sí"
       }
     ],
