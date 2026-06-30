@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-27T09:51:04.367410Z",
-  "total_files": 28,
+  "updated_at": "2026-06-30T21:25:10.003442Z",
+  "total_files": 29,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -29,7 +29,8 @@
     "SEM 26 C1",
     "SEM 26 C2",
     "SEM 26 C2",
-    "SEM 26 C2"
+    "SEM 26 C2",
+    "SEM 8 C1"
   ],
   "records": {
     "0387/066": {
@@ -646,60 +647,105 @@
       "first_label": "SEM 26 C2",
       "last_label": "SEM 26 C2",
       "family": "CAMISA"
+    },
+    "8073/068": {
+      "count": 1,
+      "labels": [
+        "SEM 8 C1"
+      ],
+      "first_label": "SEM 8 C1",
+      "last_label": "SEM 8 C1",
+      "family": "PANTALON"
+    },
+    "7969/042": {
+      "count": 1,
+      "labels": [
+        "SEM 8 C1"
+      ],
+      "first_label": "SEM 8 C1",
+      "last_label": "SEM 8 C1",
+      "family": "CAMISA"
+    },
+    "8372/026": {
+      "count": 1,
+      "labels": [
+        "SEM 8 C1"
+      ],
+      "first_label": "SEM 8 C1",
+      "last_label": "SEM 8 C1",
+      "family": "PANTALON"
+    },
+    "2340/576": {
+      "count": 1,
+      "labels": [
+        "SEM 8 C1"
+      ],
+      "first_label": "SEM 8 C1",
+      "last_label": "SEM 8 C1",
+      "family": "PANTALON"
+    },
+    "8372/066": {
+      "count": 1,
+      "labels": [
+        "SEM 8 C1"
+      ],
+      "first_label": "SEM 8 C1",
+      "last_label": "SEM 8 C1",
+      "family": "CAZADORA"
     }
   },
   "last_top": {
-    "label": "SEM 26 C2",
-    "filename": "TOP MERMAS S26 C2.xlsx",
+    "label": "SEM 8 C1",
+    "filename": "TOP MERMAS S8 C1.xlsx",
     "rows": [
       {
-        "mc": "8372/472",
-        "family": "BERMUDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 26 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8073/523",
-        "family": "BERMUDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 11,
-        "ciclos": "SEM 26 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7911/576",
+        "mc": "8073/068",
         "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 26 C2",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 8 C1",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "2753/027",
-        "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 26 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "1608/322",
+        "mc": "7969/042",
         "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 26 C2",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 8 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8372/026",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 8 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "2340/576",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 8 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8372/066",
+        "family": "CAZADORA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 8 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 0,
-    "repeated_models": 5
+    "new_models": 5,
+    "repeated_models": 0
   }
 }
