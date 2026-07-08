@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-08T14:06:35.489601Z",
-  "total_files": 37,
+  "updated_at": "2026-07-08T14:20:10.954644Z",
+  "total_files": 38,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -34,6 +34,7 @@
     "SEM 26 C2",
     "SEM 27 C1",
     "SEM 27 C2",
+    "SEM 28 C1",
     "SEM 28 C1",
     "SEM 28 C1",
     "SEM 28 C1",
@@ -100,7 +101,7 @@
       "family": "CAMISA"
     },
     "4387/023": {
-      "count": 11,
+      "count": 12,
       "labels": [
         "SEM 18 C2",
         "SEM 20 C2",
@@ -204,7 +205,7 @@
       "family": "FALDA"
     },
     "2349/377": {
-      "count": 8,
+      "count": 9,
       "labels": [
         "SEM 19 C2",
         "SEM 27 C2",
@@ -762,7 +763,7 @@
       "family": "PANTALON"
     },
     "3046/522": {
-      "count": 5,
+      "count": 6,
       "labels": [
         "SEM 28 C1"
       ],
@@ -771,7 +772,7 @@
       "family": "BERMUDA"
     },
     "4387/276": {
-      "count": 5,
+      "count": 6,
       "labels": [
         "SEM 28 C1"
       ],
@@ -780,7 +781,7 @@
       "family": "PANTALON"
     },
     "7055/617": {
-      "count": 5,
+      "count": 6,
       "labels": [
         "SEM 28 C1"
       ],
@@ -798,7 +799,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 11,
+        "count": 12,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
@@ -807,7 +808,7 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
+        "count": 6,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
@@ -816,7 +817,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
+        "count": 6,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
@@ -825,7 +826,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 8,
+        "count": 9,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
@@ -834,7 +835,7 @@
         "family": "CAMISA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
+        "count": 6,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       }
