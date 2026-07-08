@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-08T03:00:58.400972Z",
-  "total_files": 33,
+  "updated_at": "2026-07-08T12:47:45.135674Z",
+  "total_files": 34,
   "order": [
     "SEM 18 C1",
     "SEM 18 C2",
@@ -34,6 +34,7 @@
     "SEM 26 C2",
     "SEM 27 C1",
     "SEM 27 C2",
+    "SEM 28 C1",
     "SEM 28 C1"
   ],
   "records": {
@@ -96,7 +97,7 @@
       "family": "CAMISA"
     },
     "4387/023": {
-      "count": 7,
+      "count": 8,
       "labels": [
         "SEM 18 C2",
         "SEM 20 C2",
@@ -200,7 +201,7 @@
       "family": "FALDA"
     },
     "2349/377": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 19 C2",
         "SEM 27 C2",
@@ -758,7 +759,7 @@
       "family": "PANTALON"
     },
     "3046/522": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 28 C1"
       ],
@@ -767,7 +768,7 @@
       "family": "BERMUDA"
     },
     "4387/276": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 28 C1"
       ],
@@ -776,7 +777,7 @@
       "family": "PANTALON"
     },
     "7055/617": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 28 C1"
       ],
@@ -787,32 +788,32 @@
   },
   "last_top": {
     "label": "SEM 28 C1",
-    "filename": "TOP MERMAS S28 C1.xlsx",
+    "filename": "TOP MERMAS S28 C1 aut.xlsx",
     "rows": [
       {
         "mc": "4387/023",
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 7,
+        "count": 8,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "3046/522",
         "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "4387/276",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
@@ -821,22 +822,22 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
+        "count": 5,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7055/617",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 28 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 3,
-    "repeated_models": 2
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
