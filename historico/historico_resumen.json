@@ -1,36 +1,7 @@
 {
-  "updated_at": "2026-07-10T13:33:06.058968Z",
-  "total_files": 39,
+  "updated_at": null,
+  "total_files": 10,
   "order": [
-    "SEM 18 C1",
-    "SEM 18 C2",
-    "SEM 19 C1",
-    "SEM 19 C2",
-    "SEM 19 C2",
-    "SEM 20 C1",
-    "SEM 20 C2",
-    "SEM 20 C2",
-    "SEM 21 C1",
-    "SEM 21 C2",
-    "SEM 15 C2",
-    "SEM 22 C1",
-    "SEM 22 C2",
-    "SEM 22 C2",
-    "SEM 23 C1",
-    "SEM 23 C2",
-    "SEM 23 C2",
-    "SEM 23 C2",
-    "SEM 24 C1",
-    "SEM 24 C1",
-    "SEM 24 C2",
-    "SEM 24 C2",
-    "SEM 25 C1",
-    "SEM 25 C2",
-    "SEM 26 C1",
-    "SEM 26 C2",
-    "SEM 26 C2",
-    "SEM 26 C2",
-    "SEM 8 C1",
     "SEM 26 C2",
     "SEM 27 C1",
     "SEM 27 C2",
@@ -43,680 +14,60 @@
     "SEM 27 C1"
   ],
   "records": {
-    "0387/066": {
-      "count": 1,
-      "labels": [
-        "SEM 18 C1"
-      ],
-      "first_label": "SEM 18 C1",
-      "last_label": "SEM 18 C1",
-      "family": "CAMISA"
-    },
-    "9929/141": {
-      "count": 4,
-      "labels": [
-        "SEM 18 C1",
-        "SEM 18 C2",
-        "SEM 20 C1",
-        "SEM 15 C2"
-      ],
-      "first_label": "SEM 18 C1",
-      "last_label": "SEM 15 C2",
-      "family": "PANTALON"
-    },
-    "0085/316": {
-      "count": 2,
-      "labels": [
-        "SEM 18 C1",
-        "SEM 25 C1"
-      ],
-      "first_label": "SEM 18 C1",
-      "last_label": "SEM 25 C1",
-      "family": "VESTIDO"
-    },
-    "2753/530": {
-      "count": 1,
-      "labels": [
-        "SEM 18 C1"
-      ],
-      "first_label": "SEM 18 C1",
-      "last_label": "SEM 18 C1",
-      "family": "BLAZER"
-    },
-    "1821/027": {
-      "count": 1,
-      "labels": [
-        "SEM 18 C1"
-      ],
-      "first_label": "SEM 18 C1",
-      "last_label": "SEM 18 C1",
-      "family": "CAMISA"
-    },
-    "0387/072": {
-      "count": 1,
-      "labels": [
-        "SEM 18 C2"
-      ],
-      "first_label": "SEM 18 C2",
-      "last_label": "SEM 18 C2",
-      "family": "CAMISA"
-    },
-    "4387/023": {
-      "count": 12,
-      "labels": [
-        "SEM 18 C2",
-        "SEM 20 C2",
-        "SEM 24 C2",
-        "SEM 27 C2",
-        "SEM 28 C1"
-      ],
-      "first_label": "SEM 18 C2",
-      "last_label": "SEM 28 C1",
-      "family": "PANTALON"
-    },
-    "5039/394": {
-      "count": 1,
-      "labels": [
-        "SEM 18 C2"
-      ],
-      "first_label": "SEM 18 C2",
-      "last_label": "SEM 18 C2",
-      "family": "VESTIDO"
-    },
-    "2753/228": {
-      "count": 1,
-      "labels": [
-        "SEM 18 C2"
-      ],
-      "first_label": "SEM 18 C2",
-      "last_label": "SEM 18 C2",
-      "family": "PANTALON"
-    },
-    "8372/421": {
-      "count": 1,
-      "labels": [
-        "SEM 19 C1"
-      ],
-      "first_label": "SEM 19 C1",
-      "last_label": "SEM 19 C1",
-      "family": "PANTALON"
-    },
-    "7200/025": {
-      "count": 1,
-      "labels": [
-        "SEM 19 C1"
-      ],
-      "first_label": "SEM 19 C1",
-      "last_label": "SEM 19 C1",
-      "family": "CAMISA"
-    },
-    "2349/576": {
-      "count": 1,
-      "labels": [
-        "SEM 19 C1"
-      ],
-      "first_label": "SEM 19 C1",
-      "last_label": "SEM 19 C1",
-      "family": "PANTALON"
-    },
-    "8372/150": {
-      "count": 1,
-      "labels": [
-        "SEM 19 C1"
-      ],
-      "first_label": "SEM 19 C1",
-      "last_label": "SEM 19 C1",
-      "family": "PANTALON"
-    },
-    "8372/222": {
-      "count": 1,
-      "labels": [
-        "SEM 19 C1"
-      ],
-      "first_label": "SEM 19 C1",
-      "last_label": "SEM 19 C1",
-      "family": "PANTALON"
-    },
-    "1058/006": {
+    "8073/523": {
       "count": 3,
       "labels": [
-        "SEM 19 C2",
-        "SEM 20 C1"
-      ],
-      "first_label": "SEM 19 C2",
-      "last_label": "SEM 20 C1",
-      "family": "VESTIDO"
-    },
-    "1008/221": {
-      "count": 2,
-      "labels": [
-        "SEM 19 C2"
-      ],
-      "first_label": "SEM 19 C2",
-      "last_label": "SEM 19 C2",
-      "family": "FALDA"
-    },
-    "4387/110": {
-      "count": 2,
-      "labels": [
-        "SEM 19 C2"
-      ],
-      "first_label": "SEM 19 C2",
-      "last_label": "SEM 19 C2",
-      "family": "FALDA"
-    },
-    "2349/377": {
-      "count": 9,
-      "labels": [
-        "SEM 19 C2",
-        "SEM 27 C2",
-        "SEM 28 C1"
-      ],
-      "first_label": "SEM 19 C2",
-      "last_label": "SEM 28 C1",
-      "family": "PANTALON"
-    },
-    "4387/221": {
-      "count": 2,
-      "labels": [
-        "SEM 19 C2"
-      ],
-      "first_label": "SEM 19 C2",
-      "last_label": "SEM 19 C2",
-      "family": "CAMISA"
-    },
-    "8073/523": {
-      "count": 14,
-      "labels": [
-        "SEM 20 C1",
-        "SEM 22 C2",
-        "SEM 23 C1",
-        "SEM 23 C2",
-        "SEM 26 C1",
         "SEM 26 C2",
         "SEM 27 C1"
       ],
-      "first_label": "SEM 20 C1",
+      "first_label": "SEM 26 C2",
       "last_label": "SEM 27 C1",
       "family": "BERMUDA"
     },
-    "0264/070": {
-      "count": 2,
-      "labels": [
-        "SEM 20 C1",
-        "SEM 21 C1"
-      ],
-      "first_label": "SEM 20 C1",
-      "last_label": "SEM 21 C1",
-      "family": "CAMISETA"
-    },
-    "8372/449": {
-      "count": 3,
-      "labels": [
-        "SEM 20 C1",
-        "SEM 24 C1"
-      ],
-      "first_label": "SEM 20 C1",
-      "last_label": "SEM 24 C1",
-      "family": "PANTALON"
-    },
-    "8372/244": {
-      "count": 7,
-      "labels": [
-        "SEM 20 C2",
-        "SEM 21 C1",
-        "SEM 22 C1",
-        "SEM 24 C1",
-        "SEM 25 C1"
-      ],
-      "first_label": "SEM 20 C2",
-      "last_label": "SEM 25 C1",
-      "family": "BERMUDA"
-    },
-    "9929/249": {
-      "count": 3,
-      "labels": [
-        "SEM 20 C2",
-        "SEM 15 C2"
-      ],
-      "first_label": "SEM 20 C2",
-      "last_label": "SEM 15 C2",
-      "family": "PANTALON"
-    },
-    "4813/365": {
-      "count": 2,
-      "labels": [
-        "SEM 20 C2"
-      ],
-      "first_label": "SEM 20 C2",
-      "last_label": "SEM 20 C2",
-      "family": "CAMISETA"
-    },
-    "4387/086": {
-      "count": 2,
-      "labels": [
-        "SEM 20 C2"
-      ],
-      "first_label": "SEM 20 C2",
-      "last_label": "SEM 20 C2",
-      "family": "PANTALON"
-    },
-    "4387/106": {
+    "1608/322": {
       "count": 1,
       "labels": [
-        "SEM 21 C1"
-      ],
-      "first_label": "SEM 21 C1",
-      "last_label": "SEM 21 C1",
-      "family": "PANTALON"
-    },
-    "4006/817": {
-      "count": 1,
-      "labels": [
-        "SEM 21 C1"
-      ],
-      "first_label": "SEM 21 C1",
-      "last_label": "SEM 21 C1",
-      "family": "CAMISA"
-    },
-    "7969/223": {
-      "count": 1,
-      "labels": [
-        "SEM 21 C1"
-      ],
-      "first_label": "SEM 21 C1",
-      "last_label": "SEM 21 C1",
-      "family": "CAMISA"
-    },
-    "6009/571": {
-      "count": 1,
-      "labels": [
-        "SEM 21 C2"
-      ],
-      "first_label": "SEM 21 C2",
-      "last_label": "SEM 21 C2",
-      "family": "CAMISA"
-    },
-    "4387/092": {
-      "count": 1,
-      "labels": [
-        "SEM 21 C2"
-      ],
-      "first_label": "SEM 21 C2",
-      "last_label": "SEM 21 C2",
-      "family": "PANTALON"
-    },
-    "6005/558": {
-      "count": 1,
-      "labels": [
-        "SEM 21 C2"
-      ],
-      "first_label": "SEM 21 C2",
-      "last_label": "SEM 21 C2",
-      "family": "CAMISA"
-    },
-    "7728/753": {
-      "count": 1,
-      "labels": [
-        "SEM 21 C2"
-      ],
-      "first_label": "SEM 21 C2",
-      "last_label": "SEM 21 C2",
-      "family": "PANTALON"
-    },
-    "4387/021": {
-      "count": 4,
-      "labels": [
-        "SEM 21 C2",
-        "SEM 23 C2"
-      ],
-      "first_label": "SEM 21 C2",
-      "last_label": "SEM 23 C2",
-      "family": "CAMISA"
-    },
-    "8372/041": {
-      "count": 1,
-      "labels": [
-        "SEM 15 C2"
-      ],
-      "first_label": "SEM 15 C2",
-      "last_label": "SEM 15 C2",
-      "family": "PANTALON"
-    },
-    "0387/060": {
-      "count": 1,
-      "labels": [
-        "SEM 15 C2"
-      ],
-      "first_label": "SEM 15 C2",
-      "last_label": "SEM 15 C2",
-      "family": "CAMISA"
-    },
-    "8372/111": {
-      "count": 1,
-      "labels": [
-        "SEM 15 C2"
-      ],
-      "first_label": "SEM 15 C2",
-      "last_label": "SEM 15 C2",
-      "family": "PANTALON"
-    },
-    "2893/454": {
-      "count": 1,
-      "labels": [
-        "SEM 22 C1"
-      ],
-      "first_label": "SEM 22 C1",
-      "last_label": "SEM 22 C1",
-      "family": "CHALECO"
-    },
-    "7751/784": {
-      "count": 1,
-      "labels": [
-        "SEM 22 C1"
-      ],
-      "first_label": "SEM 22 C1",
-      "last_label": "SEM 22 C1",
-      "family": "PANTALON"
-    },
-    "3115/734": {
-      "count": 1,
-      "labels": [
-        "SEM 22 C1"
-      ],
-      "first_label": "SEM 22 C1",
-      "last_label": "SEM 22 C1",
-      "family": "CAMISA"
-    },
-    "2921/476": {
-      "count": 1,
-      "labels": [
-        "SEM 22 C1"
-      ],
-      "first_label": "SEM 22 C1",
-      "last_label": "SEM 22 C1",
-      "family": "VESTIDO"
-    },
-    "3293/060": {
-      "count": 2,
-      "labels": [
-        "SEM 22 C2"
-      ],
-      "first_label": "SEM 22 C2",
-      "last_label": "SEM 22 C2",
-      "family": "VESTIDO"
-    },
-    "2231/399": {
-      "count": 2,
-      "labels": [
-        "SEM 22 C2"
-      ],
-      "first_label": "SEM 22 C2",
-      "last_label": "SEM 22 C2",
-      "family": "CAMISA"
-    },
-    "8741/230": {
-      "count": 5,
-      "labels": [
-        "SEM 22 C2",
-        "SEM 23 C2"
-      ],
-      "first_label": "SEM 22 C2",
-      "last_label": "SEM 23 C2",
-      "family": "VESTIDO"
-    },
-    "2963/709": {
-      "count": 2,
-      "labels": [
-        "SEM 22 C2"
-      ],
-      "first_label": "SEM 22 C2",
-      "last_label": "SEM 22 C2",
-      "family": "PANTALON"
-    },
-    "8741/238": {
-      "count": 4,
-      "labels": [
-        "SEM 23 C1",
-        "SEM 24 C2",
-        "SEM 25 C1"
-      ],
-      "first_label": "SEM 23 C1",
-      "last_label": "SEM 25 C1",
-      "family": "CAMISA"
-    },
-    "3046/221": {
-      "count": 1,
-      "labels": [
-        "SEM 23 C1"
-      ],
-      "first_label": "SEM 23 C1",
-      "last_label": "SEM 23 C1",
-      "family": "BERMUDA"
-    },
-    "3086/694": {
-      "count": 1,
-      "labels": [
-        "SEM 23 C1"
-      ],
-      "first_label": "SEM 23 C1",
-      "last_label": "SEM 23 C1",
-      "family": "CAMISA"
-    },
-    "0264/475": {
-      "count": 1,
-      "labels": [
-        "SEM 23 C1"
-      ],
-      "first_label": "SEM 23 C1",
-      "last_label": "SEM 23 C1",
-      "family": "VESTIDO"
-    },
-    "8372/225": {
-      "count": 5,
-      "labels": [
-        "SEM 23 C2",
-        "SEM 24 C2"
-      ],
-      "first_label": "SEM 23 C2",
-      "last_label": "SEM 24 C2",
-      "family": "BERMUDA"
-    },
-    "0387/069": {
-      "count": 3,
-      "labels": [
-        "SEM 23 C2"
-      ],
-      "first_label": "SEM 23 C2",
-      "last_label": "SEM 23 C2",
-      "family": "MONO"
-    },
-    "9929/024": {
-      "count": 3,
-      "labels": [
-        "SEM 24 C1",
-        "SEM 26 C1"
-      ],
-      "first_label": "SEM 24 C1",
-      "last_label": "SEM 26 C1",
-      "family": "BERMUDA"
-    },
-    "8372/029": {
-      "count": 2,
-      "labels": [
-        "SEM 24 C1"
-      ],
-      "first_label": "SEM 24 C1",
-      "last_label": "SEM 24 C1",
-      "family": "PANTALON"
-    },
-    "7969/053": {
-      "count": 2,
-      "labels": [
-        "SEM 24 C1"
-      ],
-      "first_label": "SEM 24 C1",
-      "last_label": "SEM 24 C1",
-      "family": "CAMISA"
-    },
-    "7969/224": {
-      "count": 3,
-      "labels": [
-        "SEM 24 C2",
-        "SEM 25 C1"
-      ],
-      "first_label": "SEM 24 C2",
-      "last_label": "SEM 25 C1",
-      "family": "CAMISA"
-    },
-    "2157/227": {
-      "count": 4,
-      "labels": [
-        "SEM 24 C2",
-        "SEM 25 C2",
-        "SEM 26 C1"
-      ],
-      "first_label": "SEM 24 C2",
-      "last_label": "SEM 26 C1",
-      "family": "CAMISA"
-    },
-    "5067/211": {
-      "count": 1,
-      "labels": [
-        "SEM 25 C1"
-      ],
-      "first_label": "SEM 25 C1",
-      "last_label": "SEM 25 C1",
-      "family": "VESTIDO"
-    },
-    "8372/472": {
-      "count": 5,
-      "labels": [
-        "SEM 25 C2",
         "SEM 26 C2"
       ],
-      "first_label": "SEM 25 C2",
+      "first_label": "SEM 26 C2",
+      "last_label": "SEM 26 C2",
+      "family": "CAMISA"
+    },
+    "2753/027": {
+      "count": 1,
+      "labels": [
+        "SEM 26 C2"
+      ],
+      "first_label": "SEM 26 C2",
+      "last_label": "SEM 26 C2",
+      "family": "PANTALON"
+    },
+    "8372/472": {
+      "count": 1,
+      "labels": [
+        "SEM 26 C2"
+      ],
+      "first_label": "SEM 26 C2",
       "last_label": "SEM 26 C2",
       "family": "BERMUDA"
     },
-    "7802/398": {
+    "7911/576": {
       "count": 1,
       "labels": [
-        "SEM 25 C2"
+        "SEM 26 C2"
       ],
-      "first_label": "SEM 25 C2",
-      "last_label": "SEM 25 C2",
+      "first_label": "SEM 26 C2",
+      "last_label": "SEM 26 C2",
       "family": "PANTALON"
     },
     "7762/888": {
-      "count": 3,
-      "labels": [
-        "SEM 25 C2",
-        "SEM 27 C1"
-      ],
-      "first_label": "SEM 25 C2",
-      "last_label": "SEM 27 C1",
-      "family": "PANTALON"
-    },
-    "8372/231": {
-      "count": 1,
-      "labels": [
-        "SEM 25 C2"
-      ],
-      "first_label": "SEM 25 C2",
-      "last_label": "SEM 25 C2",
-      "family": "CAMISA"
-    },
-    "9929/190": {
-      "count": 1,
-      "labels": [
-        "SEM 26 C1"
-      ],
-      "first_label": "SEM 26 C1",
-      "last_label": "SEM 26 C1",
-      "family": "PANTALON"
-    },
-    "2753/027": {
-      "count": 5,
-      "labels": [
-        "SEM 26 C1",
-        "SEM 26 C2"
-      ],
-      "first_label": "SEM 26 C1",
-      "last_label": "SEM 26 C2",
-      "family": "PANTALON"
-    },
-    "7911/576": {
-      "count": 4,
-      "labels": [
-        "SEM 26 C2"
-      ],
-      "first_label": "SEM 26 C2",
-      "last_label": "SEM 26 C2",
-      "family": "PANTALON"
-    },
-    "1608/322": {
-      "count": 4,
-      "labels": [
-        "SEM 26 C2"
-      ],
-      "first_label": "SEM 26 C2",
-      "last_label": "SEM 26 C2",
-      "family": "CAMISA"
-    },
-    "8073/068": {
-      "count": 1,
-      "labels": [
-        "SEM 8 C1"
-      ],
-      "first_label": "SEM 8 C1",
-      "last_label": "SEM 8 C1",
-      "family": "PANTALON"
-    },
-    "7969/042": {
-      "count": 1,
-      "labels": [
-        "SEM 8 C1"
-      ],
-      "first_label": "SEM 8 C1",
-      "last_label": "SEM 8 C1",
-      "family": "CAMISA"
-    },
-    "8372/026": {
-      "count": 1,
-      "labels": [
-        "SEM 8 C1"
-      ],
-      "first_label": "SEM 8 C1",
-      "last_label": "SEM 8 C1",
-      "family": "PANTALON"
-    },
-    "2340/576": {
-      "count": 1,
-      "labels": [
-        "SEM 8 C1"
-      ],
-      "first_label": "SEM 8 C1",
-      "last_label": "SEM 8 C1",
-      "family": "PANTALON"
-    },
-    "8372/066": {
-      "count": 1,
-      "labels": [
-        "SEM 8 C1"
-      ],
-      "first_label": "SEM 8 C1",
-      "last_label": "SEM 8 C1",
-      "family": "CAZADORA"
-    },
-    "7852/327": {
       "count": 2,
       "labels": [
         "SEM 27 C1"
       ],
       "first_label": "SEM 27 C1",
       "last_label": "SEM 27 C1",
-      "family": "FALDA"
+      "family": "PANTALON"
     },
     "7931/813": {
       "count": 2,
@@ -727,6 +78,15 @@
       "last_label": "SEM 27 C1",
       "family": "CAMISA"
     },
+    "7852/327": {
+      "count": 2,
+      "labels": [
+        "SEM 27 C1"
+      ],
+      "first_label": "SEM 27 C1",
+      "last_label": "SEM 27 C1",
+      "family": "FALDA"
+    },
     "4745/036": {
       "count": 2,
       "labels": [
@@ -735,6 +95,16 @@
       "first_label": "SEM 27 C1",
       "last_label": "SEM 27 C1",
       "family": "CAMISA"
+    },
+    "2349/377": {
+      "count": 7,
+      "labels": [
+        "SEM 27 C2",
+        "SEM 28 C1"
+      ],
+      "first_label": "SEM 27 C2",
+      "last_label": "SEM 28 C1",
+      "family": "PANTALON"
     },
     "7088/399": {
       "count": 1,
@@ -745,15 +115,6 @@
       "last_label": "SEM 27 C2",
       "family": "CAMISA"
     },
-    "7811/733": {
-      "count": 1,
-      "labels": [
-        "SEM 27 C2"
-      ],
-      "first_label": "SEM 27 C2",
-      "last_label": "SEM 27 C2",
-      "family": "BERMUDA"
-    },
     "7742/793": {
       "count": 1,
       "labels": [
@@ -763,21 +124,22 @@
       "last_label": "SEM 27 C2",
       "family": "PANTALON"
     },
-    "3046/522": {
-      "count": 6,
+    "7811/733": {
+      "count": 1,
       "labels": [
-        "SEM 28 C1"
+        "SEM 27 C2"
       ],
-      "first_label": "SEM 28 C1",
-      "last_label": "SEM 28 C1",
+      "first_label": "SEM 27 C2",
+      "last_label": "SEM 27 C2",
       "family": "BERMUDA"
     },
-    "4387/276": {
-      "count": 6,
+    "4387/023": {
+      "count": 7,
       "labels": [
+        "SEM 27 C2",
         "SEM 28 C1"
       ],
-      "first_label": "SEM 28 C1",
+      "first_label": "SEM 27 C2",
       "last_label": "SEM 28 C1",
       "family": "PANTALON"
     },
@@ -789,24 +151,33 @@
       "first_label": "SEM 28 C1",
       "last_label": "SEM 28 C1",
       "family": "CAMISA"
+    },
+    "4387/276": {
+      "count": 6,
+      "labels": [
+        "SEM 28 C1"
+      ],
+      "first_label": "SEM 28 C1",
+      "last_label": "SEM 28 C1",
+      "family": "PANTALON"
+    },
+    "3046/522": {
+      "count": 6,
+      "labels": [
+        "SEM 28 C1"
+      ],
+      "first_label": "SEM 28 C1",
+      "last_label": "SEM 28 C1",
+      "family": "BERMUDA"
     }
   },
   "last_top": {
     "label": "SEM 27 C1",
-    "filename": "TOP MERMAS S27 C1.xlsx",
+    "filename": "",
     "rows": [
       {
         "mc": "8073/523",
         "family": "BERMUDA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 14,
-        "ciclos": "SEM 27 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7762/888",
-        "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
         "count": 3,
@@ -814,8 +185,44 @@
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "7852/327",
-        "family": "FALDA",
+        "mc": "1608/322",
+        "family": "CAMISA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "2753/027",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8372/472",
+        "family": "BERMUDA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7911/576",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7762/888",
+        "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
         "count": 2,
@@ -832,6 +239,15 @@
         "appears_in_last_top": "Sí"
       },
       {
+        "mc": "7852/327",
+        "family": "FALDA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
         "mc": "4745/036",
         "family": "CAMISA",
         "estado": "Reincidente",
@@ -839,10 +255,82 @@
         "count": 2,
         "ciclos": "SEM 27 C1",
         "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "2349/377",
+        "family": "PANTALON",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 7,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7088/399",
+        "family": "CAMISA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7742/793",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7811/733",
+        "family": "BERMUDA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "4387/023",
+        "family": "PANTALON",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 7,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7055/617",
+        "family": "CAMISA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 6,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "4387/276",
+        "family": "PANTALON",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 6,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "3046/522",
+        "family": "BERMUDA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 6,
+        "ciclos": "SEM 27 C1",
+        "appears_in_last_top": "Sí"
       }
     ],
-    "total_models": 5,
-    "new_models": 0,
-    "repeated_models": 5
+    "total_models": 17,
+    "new_models": 7,
+    "repeated_models": 10
   }
 }
