@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-15T05:25:43.658375Z",
-  "total_files": 16,
+  "updated_at": "2026-07-15T05:26:36.647865Z",
+  "total_files": 17,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -17,6 +17,7 @@
     "SEM 28 C2",
     "SEM 28 C2",
     "SEM 28 C2",
+    "SEM 29 C1",
     "SEM 29 C1"
   ],
   "records": {
@@ -49,7 +50,7 @@
       "family": "PANTALON"
     },
     "8372/472": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 26 C2",
         "SEM 29 C1"
@@ -86,7 +87,7 @@
       "family": "CAMISA"
     },
     "7852/327": {
-      "count": 3,
+      "count": 4,
       "labels": [
         "SEM 27 C1",
         "SEM 29 C1"
@@ -224,7 +225,7 @@
       "family": "CAMISA"
     },
     "7924/377": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C1"
       ],
@@ -233,7 +234,7 @@
       "family": "BERMUDA"
     },
     "7001/625": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C1"
       ],
@@ -242,7 +243,7 @@
       "family": "VESTIDO"
     },
     "7813/741": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C1"
       ],
@@ -260,25 +261,25 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7924/377",
         "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7001/625",
         "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       },
@@ -287,22 +288,22 @@
         "family": "FALDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 3,
+        "count": 4,
         "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7813/741",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 3,
-    "repeated_models": 2
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
