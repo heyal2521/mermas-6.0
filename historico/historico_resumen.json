@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-13T14:43:19.131614Z",
-  "total_files": 15,
+  "updated_at": "2026-07-15T05:25:43.658375Z",
+  "total_files": 16,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -16,7 +16,8 @@
     "SEM 28 C2",
     "SEM 28 C2",
     "SEM 28 C2",
-    "SEM 28 C2"
+    "SEM 28 C2",
+    "SEM 29 C1"
   ],
   "records": {
     "8073/523": {
@@ -48,12 +49,13 @@
       "family": "PANTALON"
     },
     "8372/472": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 26 C2"
+        "SEM 26 C2",
+        "SEM 29 C1"
       ],
       "first_label": "SEM 26 C2",
-      "last_label": "SEM 26 C2",
+      "last_label": "SEM 29 C1",
       "family": "BERMUDA"
     },
     "7911/576": {
@@ -84,12 +86,13 @@
       "family": "CAMISA"
     },
     "7852/327": {
-      "count": 2,
+      "count": 3,
       "labels": [
-        "SEM 27 C1"
+        "SEM 27 C1",
+        "SEM 29 C1"
       ],
       "first_label": "SEM 27 C1",
-      "last_label": "SEM 27 C1",
+      "last_label": "SEM 29 C1",
       "family": "FALDA"
     },
     "4745/036": {
@@ -219,60 +222,87 @@
       "first_label": "SEM 28 C2",
       "last_label": "SEM 28 C2",
       "family": "CAMISA"
+    },
+    "7924/377": {
+      "count": 1,
+      "labels": [
+        "SEM 29 C1"
+      ],
+      "first_label": "SEM 29 C1",
+      "last_label": "SEM 29 C1",
+      "family": "BERMUDA"
+    },
+    "7001/625": {
+      "count": 1,
+      "labels": [
+        "SEM 29 C1"
+      ],
+      "first_label": "SEM 29 C1",
+      "last_label": "SEM 29 C1",
+      "family": "VESTIDO"
+    },
+    "7813/741": {
+      "count": 1,
+      "labels": [
+        "SEM 29 C1"
+      ],
+      "first_label": "SEM 29 C1",
+      "last_label": "SEM 29 C1",
+      "family": "PANTALON"
     }
   },
   "last_top": {
-    "label": "SEM 28 C2",
-    "filename": "TOP MERMAS S28 C2.xlsx",
+    "label": "SEM 29 C1",
+    "filename": "TOP MERMAS S29 C1.xlsx",
     "rows": [
       {
-        "mc": "7055/540",
-        "family": "CAMISA",
+        "mc": "8372/472",
+        "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
-        "ciclos": "SEM 28 C2",
+        "count": 2,
+        "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "7914/827",
+        "mc": "7924/377",
+        "family": "BERMUDA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 29 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7001/625",
         "family": "VESTIDO",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 5,
-        "ciclos": "SEM 28 C2",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "5067/154",
+        "mc": "7852/327",
+        "family": "FALDA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 3,
+        "ciclos": "SEM 29 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7813/741",
         "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 5,
-        "ciclos": "SEM 28 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7034/543",
-        "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 5,
-        "ciclos": "SEM 28 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7018/299",
-        "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 5,
-        "ciclos": "SEM 28 C2",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 29 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 0,
-    "repeated_models": 5
+    "new_models": 3,
+    "repeated_models": 2
   }
 }
