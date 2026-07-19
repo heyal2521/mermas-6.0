@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-18T06:25:48.203964Z",
-  "total_files": 22,
+  "updated_at": "2026-07-19T09:36:45.335937Z",
+  "total_files": 23,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -23,6 +23,7 @@
     "SEM 29 C1",
     "SEM 29 C1",
     "SEM 29 C1",
+    "SEM 29 C2",
     "SEM 29 C2"
   ],
   "records": {
@@ -212,7 +213,7 @@
       "family": "PANTALON"
     },
     "7034/543": {
-      "count": 6,
+      "count": 7,
       "labels": [
         "SEM 28 C2",
         "SEM 29 C2"
@@ -258,7 +259,7 @@
       "family": "PANTALON"
     },
     "7079/320": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C2"
       ],
@@ -267,7 +268,7 @@
       "family": "CAMISA"
     },
     "7095/730": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C2"
       ],
@@ -276,7 +277,7 @@
       "family": "CAMISA"
     },
     "7919/467": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C2"
       ],
@@ -285,7 +286,7 @@
       "family": "BERMUDA"
     },
     "3293/153": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 29 C2"
       ],
@@ -301,9 +302,9 @@
       {
         "mc": "7079/320",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C2",
         "appears_in_last_top": "Sí"
       },
@@ -312,40 +313,40 @@
         "family": "CAMISA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 6,
+        "count": 7,
         "ciclos": "SEM 29 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7095/730",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7919/467",
         "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "3293/153",
         "family": "FALDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 29 C2",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 4,
-    "repeated_models": 1
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
