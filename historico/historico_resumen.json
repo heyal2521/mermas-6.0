@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-22T08:47:30.303073Z",
-  "total_files": 24,
+  "updated_at": "2026-07-22T08:48:00.207516Z",
+  "total_files": 25,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -25,6 +25,7 @@
     "SEM 29 C1",
     "SEM 29 C2",
     "SEM 29 C2",
+    "SEM 30 C1",
     "SEM 30 C1"
   ],
   "records": {
@@ -187,7 +188,7 @@
       "family": "BERMUDA"
     },
     "7055/540": {
-      "count": 6,
+      "count": 7,
       "labels": [
         "SEM 28 C2",
         "SEM 30 C1"
@@ -252,7 +253,7 @@
       "family": "VESTIDO"
     },
     "7813/741": {
-      "count": 7,
+      "count": 8,
       "labels": [
         "SEM 29 C1",
         "SEM 30 C1"
@@ -298,7 +299,7 @@
       "family": "FALDA"
     },
     "7923/576": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 30 C1"
       ],
@@ -307,7 +308,7 @@
       "family": "FALDA"
     },
     "7760/741": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 30 C1"
       ],
@@ -316,7 +317,7 @@
       "family": "CHALECO"
     },
     "4387/021": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 30 C1"
       ],
@@ -332,9 +333,9 @@
       {
         "mc": "7923/576",
         "family": "FALDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 30 C1",
         "appears_in_last_top": "Sí"
       },
@@ -343,25 +344,25 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 7,
+        "count": 8,
         "ciclos": "SEM 30 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7760/741",
         "family": "CHALECO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 30 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "4387/021",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 30 C1",
         "appears_in_last_top": "Sí"
       },
@@ -370,13 +371,13 @@
         "family": "CAMISA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 6,
+        "count": 7,
         "ciclos": "SEM 30 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 3,
-    "repeated_models": 2
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
