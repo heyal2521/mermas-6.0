@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-29T16:32:12.876958Z",
-  "total_files": 29,
+  "updated_at": "2026-08-01T04:00:58.661297Z",
+  "total_files": 30,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -30,7 +30,8 @@
     "SEM 30 C2",
     "SEM 30 C2",
     "SEM 30 C2",
-    "SEM 31 C1"
+    "SEM 31 C1",
+    "SEM 31 C2"
   ],
   "records": {
     "8073/523": {
@@ -410,55 +411,100 @@
       "first_label": "SEM 31 C1",
       "last_label": "SEM 31 C1",
       "family": "PANTALON"
+    },
+    "1058/506": {
+      "count": 1,
+      "labels": [
+        "SEM 31 C2"
+      ],
+      "first_label": "SEM 31 C2",
+      "last_label": "SEM 31 C2",
+      "family": "VESTIDO"
+    },
+    "7831/481": {
+      "count": 1,
+      "labels": [
+        "SEM 31 C2"
+      ],
+      "first_label": "SEM 31 C2",
+      "last_label": "SEM 31 C2",
+      "family": "VESTIDO"
+    },
+    "9929/122": {
+      "count": 1,
+      "labels": [
+        "SEM 31 C2"
+      ],
+      "first_label": "SEM 31 C2",
+      "last_label": "SEM 31 C2",
+      "family": "PANTALON"
+    },
+    "7783/313": {
+      "count": 1,
+      "labels": [
+        "SEM 31 C2"
+      ],
+      "first_label": "SEM 31 C2",
+      "last_label": "SEM 31 C2",
+      "family": "PANTALON"
+    },
+    "3293/154": {
+      "count": 1,
+      "labels": [
+        "SEM 31 C2"
+      ],
+      "first_label": "SEM 31 C2",
+      "last_label": "SEM 31 C2",
+      "family": "MONO"
     }
   },
   "last_top": {
-    "label": "SEM 31 C1",
-    "filename": "TOP MERMAS S31 C1.xlsx",
+    "label": "SEM 31 C2",
+    "filename": "TOP MERMAS S31 C2.xlsx",
     "rows": [
       {
-        "mc": "2335/634",
-        "family": "CAMISETA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 31 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "2335/629",
+        "mc": "1058/506",
         "family": "VESTIDO",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 31 C1",
+        "ciclos": "SEM 31 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "7944/454",
+        "mc": "7831/481",
+        "family": "VESTIDO",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 31 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "9929/122",
         "family": "PANTALON",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 31 C1",
+        "ciclos": "SEM 31 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "7933/576",
-        "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 31 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "3293/220",
+        "mc": "7783/313",
         "family": "PANTALON",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 31 C1",
+        "ciclos": "SEM 31 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "3293/154",
+        "family": "MONO",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 31 C2",
         "appears_in_last_top": "Sí"
       }
     ],
