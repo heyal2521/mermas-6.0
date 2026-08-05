@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-05T10:09:53.958551Z",
-  "total_files": 38,
+  "updated_at": "2026-08-05T10:10:16.367168Z",
+  "total_files": 39,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -36,6 +36,7 @@
     "SEM 31 C2",
     "SEM 31 C2",
     "SEM 31 C2",
+    "SEM 32 C1",
     "SEM 32 C1",
     "SEM 32 C1",
     "SEM 32 C1",
@@ -466,7 +467,7 @@
       "family": "MONO"
     },
     "4083/222": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 32 C1"
       ],
@@ -475,7 +476,7 @@
       "family": "CAZADORA"
     },
     "4083/226": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 32 C1"
       ],
@@ -484,7 +485,7 @@
       "family": "PANTALON"
     },
     "7948/131": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 32 C1"
       ],
@@ -493,7 +494,7 @@
       "family": "PANTALON"
     },
     "6318/279": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 32 C1"
       ],
@@ -502,7 +503,7 @@
       "family": "CAZADORA"
     },
     "8372/283": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 32 C1"
       ],
@@ -520,7 +521,7 @@
         "family": "CAZADORA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
+        "count": 5,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
@@ -529,7 +530,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
+        "count": 5,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
@@ -538,7 +539,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
+        "count": 5,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
@@ -547,7 +548,7 @@
         "family": "CAZADORA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
+        "count": 5,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
@@ -556,7 +557,7 @@
         "family": "CAZADORA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
+        "count": 5,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       }
