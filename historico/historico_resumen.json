@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-05T10:09:22.766299Z",
-  "total_files": 35,
+  "updated_at": "2026-08-05T10:09:33.269985Z",
+  "total_files": 36,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -36,6 +36,7 @@
     "SEM 31 C2",
     "SEM 31 C2",
     "SEM 31 C2",
+    "SEM 32 C1",
     "SEM 32 C1"
   ],
   "records": {
@@ -463,7 +464,7 @@
       "family": "MONO"
     },
     "4083/222": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C1"
       ],
@@ -472,7 +473,7 @@
       "family": "CAZADORA"
     },
     "4083/226": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C1"
       ],
@@ -481,7 +482,7 @@
       "family": "PANTALON"
     },
     "7948/131": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C1"
       ],
@@ -490,7 +491,7 @@
       "family": "PANTALON"
     },
     "6318/279": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C1"
       ],
@@ -499,7 +500,7 @@
       "family": "CAZADORA"
     },
     "8372/283": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C1"
       ],
@@ -515,51 +516,51 @@
       {
         "mc": "4083/222",
         "family": "CAZADORA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "4083/226",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7948/131",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "6318/279",
         "family": "CAZADORA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "8372/283",
         "family": "CAZADORA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 5,
-    "repeated_models": 0
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
