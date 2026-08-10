@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-08T15:29:10.200552Z",
-  "total_files": 40,
+  "updated_at": "2026-08-10T08:41:21.862235Z",
+  "total_files": 41,
   "order": [
     "SEM 26 C2",
     "SEM 27 C1",
@@ -41,6 +41,7 @@
     "SEM 32 C1",
     "SEM 32 C1",
     "SEM 32 C1",
+    "SEM 32 C2",
     "SEM 32 C2"
   ],
   "records": {
@@ -423,7 +424,7 @@
       "family": "PANTALON"
     },
     "1058/506": {
-      "count": 6,
+      "count": 7,
       "labels": [
         "SEM 31 C2",
         "SEM 32 C2"
@@ -442,7 +443,7 @@
       "family": "VESTIDO"
     },
     "9929/122": {
-      "count": 6,
+      "count": 7,
       "labels": [
         "SEM 31 C2",
         "SEM 32 C2"
@@ -515,7 +516,7 @@
       "family": "CAZADORA"
     },
     "8372/248": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C2"
       ],
@@ -524,7 +525,7 @@
       "family": "PANTALON"
     },
     "0264/719": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C2"
       ],
@@ -533,7 +534,7 @@
       "family": "VESTIDO"
     },
     "8741/237": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 32 C2"
       ],
@@ -551,25 +552,25 @@
         "family": "VESTIDO",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 6,
+        "count": 7,
         "ciclos": "SEM 32 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "8372/248",
         "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "0264/719",
         "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C2",
         "appears_in_last_top": "Sí"
       },
@@ -578,22 +579,22 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 6,
+        "count": 7,
         "ciclos": "SEM 32 C2",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "8741/237",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 32 C2",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 3,
-    "repeated_models": 2
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
