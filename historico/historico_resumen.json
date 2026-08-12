@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-11T10:40:40.157945Z",
-  "total_files": 47,
+  "updated_at": "2026-08-12T12:11:09.915356Z",
+  "total_files": 48,
   "order": [
     "SEM 8 C1",
     "SEM 10 C1",
@@ -48,7 +48,8 @@
     "SEM 31 C1",
     "SEM 31 C2",
     "SEM 32 C1",
-    "SEM 32 C2"
+    "SEM 32 C2",
+    "SEM 33 C1"
   ],
   "records": {
     "2340/576": {
@@ -1510,13 +1511,14 @@
       "family": "VESTIDO"
     },
     "9929/122": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 31 C2",
-        "SEM 32 C2"
+        "SEM 32 C2",
+        "SEM 33 C1"
       ],
       "first_label": "SEM 31 C2",
-      "last_label": "SEM 32 C2",
+      "last_label": "SEM 33 C1",
       "family": "PANTALON"
     },
     "4083/222": {
@@ -1556,21 +1558,23 @@
       "family": "PANTALON"
     },
     "8372/283": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 32 C1"
+        "SEM 32 C1",
+        "SEM 33 C1"
       ],
       "first_label": "SEM 32 C1",
-      "last_label": "SEM 32 C1",
+      "last_label": "SEM 33 C1",
       "family": "CAZADORA"
     },
     "0264/719": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 32 C2"
+        "SEM 32 C2",
+        "SEM 33 C1"
       ],
       "first_label": "SEM 32 C2",
-      "last_label": "SEM 32 C2",
+      "last_label": "SEM 33 C1",
       "family": "VESTIDO"
     },
     "8372/248": {
@@ -1590,46 +1594,64 @@
       "first_label": "SEM 32 C2",
       "last_label": "SEM 32 C2",
       "family": "CAMISA"
+    },
+    "7147/226": {
+      "count": 1,
+      "labels": [
+        "SEM 33 C1"
+      ],
+      "first_label": "SEM 33 C1",
+      "last_label": "SEM 33 C1",
+      "family": "CAMISA"
+    },
+    "7836/802": {
+      "count": 1,
+      "labels": [
+        "SEM 33 C1"
+      ],
+      "first_label": "SEM 33 C1",
+      "last_label": "SEM 33 C1",
+      "family": "PANTALON"
     }
   },
   "last_top": {
-    "label": "SEM 32 C2",
-    "filename": "",
+    "label": "SEM 33 C1",
+    "filename": "TOP MERMAS S33 C1.xlsx",
     "rows": [
       {
-        "mc": "0264/719",
-        "family": "VESTIDO",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 32 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "1058/506",
-        "family": "VESTIDO",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 32 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/248",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
-        "ciclos": "SEM 32 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8741/237",
+        "mc": "7147/226",
         "family": "CAMISA",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 32 C2",
+        "ciclos": "SEM 33 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8372/283",
+        "family": "CAZADORA",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 33 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "0264/719",
+        "family": "VESTIDO",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 33 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7836/802",
+        "family": "PANTALON",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 33 C1",
         "appears_in_last_top": "Sí"
       },
       {
@@ -1637,13 +1659,13 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 32 C2",
+        "count": 3,
+        "ciclos": "SEM 33 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 3,
-    "repeated_models": 2
+    "new_models": 2,
+    "repeated_models": 3
   }
 }
