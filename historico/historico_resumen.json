@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T12:11:09.915356Z",
+  "updated_at": "2026-08-12T12:13:23.606206Z",
   "total_files": 48,
   "order": [
     "SEM 8 C1",
@@ -1616,11 +1616,29 @@
   },
   "last_top": {
     "label": "SEM 33 C1",
-    "filename": "TOP MERMAS S33 C1.xlsx",
+    "filename": "",
     "rows": [
+      {
+        "mc": "0264/719",
+        "family": "VESTIDO",
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
+        "ciclos": "SEM 33 C1",
+        "appears_in_last_top": "Sí"
+      },
       {
         "mc": "7147/226",
         "family": "CAMISA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 33 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7836/802",
+        "family": "PANTALON",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
@@ -1633,24 +1651,6 @@
         "estado": "Reincidente",
         "prioridad": "ALTA",
         "count": 2,
-        "ciclos": "SEM 33 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "0264/719",
-        "family": "VESTIDO",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 33 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7836/802",
-        "family": "PANTALON",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
         "ciclos": "SEM 33 C1",
         "appears_in_last_top": "Sí"
       },
