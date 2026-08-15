@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-12T12:13:23.606206Z",
-  "total_files": 48,
+  "updated_at": "2026-08-15T08:12:25.521091Z",
+  "total_files": 49,
   "order": [
     "SEM 8 C1",
     "SEM 10 C1",
@@ -49,7 +49,8 @@
     "SEM 31 C2",
     "SEM 32 C1",
     "SEM 32 C2",
-    "SEM 33 C1"
+    "SEM 33 C1",
+    "SEM 33 C2"
   ],
   "records": {
     "2340/576": {
@@ -1578,12 +1579,13 @@
       "family": "VESTIDO"
     },
     "8372/248": {
-      "count": 1,
+      "count": 2,
       "labels": [
-        "SEM 32 C2"
+        "SEM 32 C2",
+        "SEM 33 C2"
       ],
       "first_label": "SEM 32 C2",
-      "last_label": "SEM 32 C2",
+      "last_label": "SEM 33 C2",
       "family": "PANTALON"
     },
     "8741/237": {
@@ -1612,60 +1614,96 @@
       "first_label": "SEM 33 C1",
       "last_label": "SEM 33 C1",
       "family": "PANTALON"
+    },
+    "8372/241": {
+      "count": 1,
+      "labels": [
+        "SEM 33 C2"
+      ],
+      "first_label": "SEM 33 C2",
+      "last_label": "SEM 33 C2",
+      "family": ""
+    },
+    "8372/242": {
+      "count": 1,
+      "labels": [
+        "SEM 33 C2"
+      ],
+      "first_label": "SEM 33 C2",
+      "last_label": "SEM 33 C2",
+      "family": ""
+    },
+    "8050/758": {
+      "count": 1,
+      "labels": [
+        "SEM 33 C2"
+      ],
+      "first_label": "SEM 33 C2",
+      "last_label": "SEM 33 C2",
+      "family": ""
+    },
+    "5067/672": {
+      "count": 1,
+      "labels": [
+        "SEM 33 C2"
+      ],
+      "first_label": "SEM 33 C2",
+      "last_label": "SEM 33 C2",
+      "family": ""
     }
   },
   "last_top": {
-    "label": "SEM 33 C1",
-    "filename": "",
+    "label": "SEM 33 C2",
+    "filename": "TOP MERMAS S33 C2.xlsx",
     "rows": [
       {
-        "mc": "0264/719",
-        "family": "VESTIDO",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 33 C1",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "7147/226",
-        "family": "CAMISA",
+        "mc": "8372/241",
+        "family": "",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 33 C1",
+        "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "7836/802",
-        "family": "PANTALON",
+        "mc": "8372/242",
+        "family": "",
         "estado": "Nuevo",
         "prioridad": "MEDIA",
         "count": 1,
-        "ciclos": "SEM 33 C1",
+        "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "8372/283",
-        "family": "CAZADORA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 2,
-        "ciclos": "SEM 33 C1",
+        "mc": "8050/758",
+        "family": "",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
       {
-        "mc": "9929/122",
+        "mc": "5067/672",
+        "family": "",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 33 C2",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "8372/248",
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 33 C1",
+        "count": 2,
+        "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 2,
-    "repeated_models": 3
+    "new_models": 4,
+    "repeated_models": 1
   }
 }
