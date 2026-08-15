@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-15T08:21:34.229183Z",
-  "total_files": 50,
+  "updated_at": "2026-08-15T08:21:42.623245Z",
+  "total_files": 51,
   "order": [
     "SEM 8 C1",
     "SEM 10 C1",
@@ -50,6 +50,7 @@
     "SEM 32 C1",
     "SEM 32 C2",
     "SEM 33 C1",
+    "SEM 33 C2",
     "SEM 33 C2",
     "SEM 33 C2"
   ],
@@ -1580,7 +1581,7 @@
       "family": "VESTIDO"
     },
     "8372/248": {
-      "count": 3,
+      "count": 4,
       "labels": [
         "SEM 32 C2",
         "SEM 33 C2"
@@ -1617,7 +1618,7 @@
       "family": "PANTALON"
     },
     "8372/241": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 33 C2"
       ],
@@ -1626,7 +1627,7 @@
       "family": "CAZADORA"
     },
     "8372/242": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 33 C2"
       ],
@@ -1635,7 +1636,7 @@
       "family": "PANTALON"
     },
     "8050/758": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 33 C2"
       ],
@@ -1644,7 +1645,7 @@
       "family": "CAMISA"
     },
     "5067/672": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 33 C2"
       ],
@@ -1662,7 +1663,7 @@
         "family": "CAZADORA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
@@ -1671,7 +1672,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
@@ -1680,7 +1681,7 @@
         "family": "CAMISA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
@@ -1689,7 +1690,7 @@
         "family": "TOPS Y OTRAS P.",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       },
@@ -1698,7 +1699,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 3,
+        "count": 4,
         "ciclos": "SEM 33 C2",
         "appears_in_last_top": "Sí"
       }
