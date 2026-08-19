@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-15T08:21:42.623245Z",
-  "total_files": 51,
+  "updated_at": "2026-08-19T09:07:18.036850Z",
+  "total_files": 52,
   "order": [
     "SEM 8 C1",
     "SEM 10 C1",
@@ -52,7 +52,8 @@
     "SEM 33 C1",
     "SEM 33 C2",
     "SEM 33 C2",
-    "SEM 33 C2"
+    "SEM 33 C2",
+    "SEM 34 C1"
   ],
   "records": {
     "2340/576": {
@@ -1581,13 +1582,14 @@
       "family": "VESTIDO"
     },
     "8372/248": {
-      "count": 4,
+      "count": 5,
       "labels": [
         "SEM 32 C2",
-        "SEM 33 C2"
+        "SEM 33 C2",
+        "SEM 34 C1"
       ],
       "first_label": "SEM 32 C2",
-      "last_label": "SEM 33 C2",
+      "last_label": "SEM 34 C1",
       "family": "PANTALON"
     },
     "8741/237": {
@@ -1652,46 +1654,55 @@
       "first_label": "SEM 33 C2",
       "last_label": "SEM 33 C2",
       "family": "TOPS Y OTRAS P."
+    },
+    "8020/566": {
+      "count": 1,
+      "labels": [
+        "SEM 34 C1"
+      ],
+      "first_label": "SEM 34 C1",
+      "last_label": "SEM 34 C1",
+      "family": "CAMISA"
+    },
+    "4344/650": {
+      "count": 1,
+      "labels": [
+        "SEM 34 C1"
+      ],
+      "first_label": "SEM 34 C1",
+      "last_label": "SEM 34 C1",
+      "family": "CAZADORA"
+    },
+    "3046/210": {
+      "count": 1,
+      "labels": [
+        "SEM 34 C1"
+      ],
+      "first_label": "SEM 34 C1",
+      "last_label": "SEM 34 C1",
+      "family": "CAZADORA"
+    },
+    "7747/738": {
+      "count": 1,
+      "labels": [
+        "SEM 34 C1"
+      ],
+      "first_label": "SEM 34 C1",
+      "last_label": "SEM 34 C1",
+      "family": "BERMUDA"
     }
   },
   "last_top": {
-    "label": "SEM 33 C2",
-    "filename": "TOP MERMAS S33 C2.xlsx",
+    "label": "SEM 34 C1",
+    "filename": "TOP MERMAS S34 C1.xlsx",
     "rows": [
       {
-        "mc": "8372/241",
-        "family": "CAZADORA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 33 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8372/242",
-        "family": "PANTALON",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 33 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "8050/758",
+        "mc": "8020/566",
         "family": "CAMISA",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 33 C2",
-        "appears_in_last_top": "Sí"
-      },
-      {
-        "mc": "5067/672",
-        "family": "TOPS Y OTRAS P.",
-        "estado": "Reincidente",
-        "prioridad": "ALTA",
-        "count": 3,
-        "ciclos": "SEM 33 C2",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
       {
@@ -1699,13 +1710,40 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 4,
-        "ciclos": "SEM 33 C2",
+        "count": 5,
+        "ciclos": "SEM 34 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "4344/650",
+        "family": "CAZADORA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 34 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "3046/210",
+        "family": "CAZADORA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 34 C1",
+        "appears_in_last_top": "Sí"
+      },
+      {
+        "mc": "7747/738",
+        "family": "BERMUDA",
+        "estado": "Nuevo",
+        "prioridad": "MEDIA",
+        "count": 1,
+        "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 0,
-    "repeated_models": 5
+    "new_models": 4,
+    "repeated_models": 1
   }
 }
