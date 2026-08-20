@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-19T09:07:18.036850Z",
-  "total_files": 52,
+  "updated_at": "2026-08-20T05:41:23.157654Z",
+  "total_files": 53,
   "order": [
     "SEM 8 C1",
     "SEM 10 C1",
@@ -53,6 +53,7 @@
     "SEM 33 C2",
     "SEM 33 C2",
     "SEM 33 C2",
+    "SEM 34 C1",
     "SEM 34 C1"
   ],
   "records": {
@@ -1582,7 +1583,7 @@
       "family": "VESTIDO"
     },
     "8372/248": {
-      "count": 5,
+      "count": 6,
       "labels": [
         "SEM 32 C2",
         "SEM 33 C2",
@@ -1656,7 +1657,7 @@
       "family": "TOPS Y OTRAS P."
     },
     "8020/566": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1665,7 +1666,7 @@
       "family": "CAMISA"
     },
     "4344/650": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1674,7 +1675,7 @@
       "family": "CAZADORA"
     },
     "3046/210": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1683,7 +1684,7 @@
       "family": "CAZADORA"
     },
     "7747/738": {
-      "count": 1,
+      "count": 2,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1699,9 +1700,9 @@
       {
         "mc": "8020/566",
         "family": "CAMISA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
@@ -1710,40 +1711,40 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 5,
+        "count": 6,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "4344/650",
         "family": "CAZADORA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "3046/210",
         "family": "CAZADORA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
       {
         "mc": "7747/738",
         "family": "BERMUDA",
-        "estado": "Nuevo",
-        "prioridad": "MEDIA",
-        "count": 1,
+        "estado": "Reincidente",
+        "prioridad": "ALTA",
+        "count": 2,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       }
     ],
     "total_models": 5,
-    "new_models": 4,
-    "repeated_models": 1
+    "new_models": 0,
+    "repeated_models": 5
   }
 }
