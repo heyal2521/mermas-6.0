@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-20T05:41:23.157654Z",
-  "total_files": 53,
+  "updated_at": "2026-08-20T06:16:31.375514Z",
+  "total_files": 54,
   "order": [
     "SEM 8 C1",
     "SEM 10 C1",
@@ -53,6 +53,7 @@
     "SEM 33 C2",
     "SEM 33 C2",
     "SEM 33 C2",
+    "SEM 34 C1",
     "SEM 34 C1",
     "SEM 34 C1"
   ],
@@ -1583,7 +1584,7 @@
       "family": "VESTIDO"
     },
     "8372/248": {
-      "count": 6,
+      "count": 7,
       "labels": [
         "SEM 32 C2",
         "SEM 33 C2",
@@ -1657,7 +1658,7 @@
       "family": "TOPS Y OTRAS P."
     },
     "8020/566": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1666,7 +1667,7 @@
       "family": "CAMISA"
     },
     "4344/650": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1675,7 +1676,7 @@
       "family": "CAZADORA"
     },
     "3046/210": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1684,7 +1685,7 @@
       "family": "CAZADORA"
     },
     "7747/738": {
-      "count": 2,
+      "count": 3,
       "labels": [
         "SEM 34 C1"
       ],
@@ -1702,7 +1703,7 @@
         "family": "CAMISA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
@@ -1711,7 +1712,7 @@
         "family": "PANTALON",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 6,
+        "count": 7,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
@@ -1720,7 +1721,7 @@
         "family": "CAZADORA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
@@ -1729,7 +1730,7 @@
         "family": "CAZADORA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       },
@@ -1738,7 +1739,7 @@
         "family": "BERMUDA",
         "estado": "Reincidente",
         "prioridad": "ALTA",
-        "count": 2,
+        "count": 3,
         "ciclos": "SEM 34 C1",
         "appears_in_last_top": "Sí"
       }
