@@ -1,1 +1,840 @@
-{"format":"TOP_MERMAS_DASHBOARD_SHARED","version":1,"exportedAt":"2026-09-09T23:49:05.190Z","rows":[{"mc":"3046/334","family":"CAZADORA","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"4387/268","family":"CAMISA","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"8372/241","family":"CAZADORA","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"8372/242","family":"PANTALON","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"8372/248","family":"PANTALON","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"3046/331","family":"ABRIGO","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"3293/276","family":"PANTALON","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"4387/493","family":"PANTALON","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"8372/242","family":"PANTALON","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"8741/252","family":"CAMISA","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"2753/229","family":"PANTALON","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"3046/234","family":"ANORAK","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"3046/334","family":"CAZADORA","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"4387/493","family":"PANTALON","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"5644/732","family":"TOPS Y OTRAS P.","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"}],"sourceIndex":{},"compositionIndex":{"3046/334||37||1":[{"row":6,"label":"POLIESTER","percentage":"1"}],"3046/234||37||1":[{"row":6,"label":"POLIESTER","percentage":"1"}],"4387/493||37||1":[{"row":3,"label":"VISCOSA","percentage":"0.3"},{"row":6,"label":"POLIESTER","percentage":"0.66"},{"row":10,"label":"ELASTANO","percentage":"0.04"}],"5644/732||37||1":[{"row":8,"label":"LYOCELL","percentage":"0.95"},{"row":10,"label":"ELASTANO","percentage":"0.05"}],"2753/229||37||1":[{"row":3,"label":"VISCOSA","percentage":"0.29"},{"row":6,"label":"POLIESTER","percentage":"0.69"},{"row":10,"label":"ELASTANO","percentage":"0.02"}],"3046/331||36||2":[],"8741/252||36||2":[],"4387/493||36||2":[],"8372/242||36||2":[],"3293/276||36||2":[],"8372/242||36||1":[{"row":6,"label":"POLIESTER","percentage":"97%"},{"row":10,"label":"ELASTANO","percentage":"3%"}],"8372/241||36||1":[{"row":6,"label":"POLIESTER","percentage":"97%"},{"row":10,"label":"ELASTANO","percentage":"3%"}],"3046/334||36||1":[{"row":6,"label":"POLIESTER","percentage":"100%"}],"4387/268||36||1":[{"row":6,"label":"POLIESTER","percentage":"100%"}],"8372/248||36||1":[{"row":5,"label":"ALGODÓN","percentage":"32%"},{"row":6,"label":"POLIESTER","percentage":"63%"},{"row":10,"label":"ELASTANO","percentage":"5%"}]}}
+{
+  "format": "TOP_MERMAS_DASHBOARD_SHARED",
+  "version": 1,
+  "exportedAt": "2026-09-23T00:00:00.000Z",
+  "rows": [
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "39",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S39 C1.xlsx",
+      "id": "TOP MERMAS S39 C1.xlsx"
+    },
+    {
+      "mc": "8372/241",
+      "family": "CAZADORA",
+      "week": "39",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S39 C1.xlsx",
+      "id": "TOP MERMAS S39 C1.xlsx"
+    },
+    {
+      "mc": "3046/235",
+      "family": "ANORAK",
+      "week": "39",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S39 C1.xlsx",
+      "id": "TOP MERMAS S39 C1.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "39",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S39 C1.xlsx",
+      "id": "TOP MERMAS S39 C1.xlsx"
+    },
+    {
+      "mc": "0085/817",
+      "family": "CAMISETA",
+      "week": "39",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S39 C1.xlsx",
+      "id": "TOP MERMAS S39 C1.xlsx"
+    },
+    {
+      "mc": "8741/267",
+      "family": "CAMISA",
+      "week": "38",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C2.xlsx",
+      "id": "TOP MERMAS S38 C2.xlsx"
+    },
+    {
+      "mc": "4387/174",
+      "family": "PANTALON",
+      "week": "38",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C2.xlsx",
+      "id": "TOP MERMAS S38 C2.xlsx"
+    },
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "38",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C2.xlsx",
+      "id": "TOP MERMAS S38 C2.xlsx"
+    },
+    {
+      "mc": "6318/329",
+      "family": "CAZADORA",
+      "week": "38",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C2.xlsx",
+      "id": "TOP MERMAS S38 C2.xlsx"
+    },
+    {
+      "mc": "8372/241",
+      "family": "CAZADORA",
+      "week": "38",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C2.xlsx",
+      "id": "TOP MERMAS S38 C2.xlsx"
+    },
+    {
+      "mc": "3046/234",
+      "family": "ANORAK",
+      "week": "38",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C1.xlsx",
+      "id": "TOP MERMAS S38 C1.xlsx"
+    },
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "38",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C1.xlsx",
+      "id": "TOP MERMAS S38 C1.xlsx"
+    },
+    {
+      "mc": "8741/252",
+      "family": "CAMISA",
+      "week": "38",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C1.xlsx",
+      "id": "TOP MERMAS S38 C1.xlsx"
+    },
+    {
+      "mc": "2753/223",
+      "family": "PANTALON",
+      "week": "38",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C1.xlsx",
+      "id": "TOP MERMAS S38 C1.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "38",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S38 C1.xlsx",
+      "id": "TOP MERMAS S38 C1.xlsx"
+    },
+    {
+      "mc": "8372/241",
+      "family": "CAZADORA",
+      "week": "37",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C2.xlsx",
+      "id": "TOP MERMAS S37 C2.xlsx"
+    },
+    {
+      "mc": "9929/122",
+      "family": "PANTALON",
+      "week": "37",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C2.xlsx",
+      "id": "TOP MERMAS S37 C2.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "37",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C2.xlsx",
+      "id": "TOP MERMAS S37 C2.xlsx"
+    },
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "37",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C2.xlsx",
+      "id": "TOP MERMAS S37 C2.xlsx"
+    },
+    {
+      "mc": "8741/380",
+      "family": "BLAZER",
+      "week": "37",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C2.xlsx",
+      "id": "TOP MERMAS S37 C2.xlsx"
+    },
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "37",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C1.xlsx",
+      "id": "TOP MERMAS S37 C1.xlsx"
+    },
+    {
+      "mc": "3046/234",
+      "family": "ANORAK",
+      "week": "37",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C1.xlsx",
+      "id": "TOP MERMAS S37 C1.xlsx"
+    },
+    {
+      "mc": "4387/493",
+      "family": "PANTALON",
+      "week": "37",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C1.xlsx",
+      "id": "TOP MERMAS S37 C1.xlsx"
+    },
+    {
+      "mc": "5644/732",
+      "family": "TOPS Y OTRAS P.",
+      "week": "37",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C1.xlsx",
+      "id": "TOP MERMAS S37 C1.xlsx"
+    },
+    {
+      "mc": "2753/229",
+      "family": "PANTALON",
+      "week": "37",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S37 C1.xlsx",
+      "id": "TOP MERMAS S37 C1.xlsx"
+    },
+    {
+      "mc": "3046/331",
+      "family": "ABRIGO",
+      "week": "36",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C2.xlsx",
+      "id": "TOP MERMAS S36 C2.xlsx"
+    },
+    {
+      "mc": "8741/252",
+      "family": "CAMISA",
+      "week": "36",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C2.xlsx",
+      "id": "TOP MERMAS S36 C2.xlsx"
+    },
+    {
+      "mc": "4387/493",
+      "family": "PANTALON",
+      "week": "36",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C2.xlsx",
+      "id": "TOP MERMAS S36 C2.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "36",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C2.xlsx",
+      "id": "TOP MERMAS S36 C2.xlsx"
+    },
+    {
+      "mc": "3293/276",
+      "family": "PANTALON",
+      "week": "36",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C2.xlsx",
+      "id": "TOP MERMAS S36 C2.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "36",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C1.xlsx",
+      "id": "TOP MERMAS S36 C1.xlsx"
+    },
+    {
+      "mc": "8372/241",
+      "family": "CAZADORA",
+      "week": "36",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C1.xlsx",
+      "id": "TOP MERMAS S36 C1.xlsx"
+    },
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "36",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C1.xlsx",
+      "id": "TOP MERMAS S36 C1.xlsx"
+    },
+    {
+      "mc": "4387/268",
+      "family": "CAMISA",
+      "week": "36",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C1.xlsx",
+      "id": "TOP MERMAS S36 C1.xlsx"
+    },
+    {
+      "mc": "8372/248",
+      "family": "PANTALON",
+      "week": "36",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S36 C1.xlsx",
+      "id": "TOP MERMAS S36 C1.xlsx"
+    },
+    {
+      "mc": "3046/334",
+      "family": "CAZADORA",
+      "week": "35",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C2.xlsx",
+      "id": "TOP MERMAS S35 C2.xlsx"
+    },
+    {
+      "mc": "5643/105",
+      "family": "SUDADERA",
+      "week": "35",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C2.xlsx",
+      "id": "TOP MERMAS S35 C2.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "35",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C2.xlsx",
+      "id": "TOP MERMAS S35 C2.xlsx"
+    },
+    {
+      "mc": "6318/267",
+      "family": "CAZADORA",
+      "week": "35",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C2.xlsx",
+      "id": "TOP MERMAS S35 C2.xlsx"
+    },
+    {
+      "mc": "4968/224",
+      "family": "CAZADORA",
+      "week": "35",
+      "cycle": "2",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C2.xlsx",
+      "id": "TOP MERMAS S35 C2.xlsx"
+    },
+    {
+      "mc": "3293/276",
+      "family": "PANTALON",
+      "week": "35",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C1.xlsx",
+      "id": "TOP MERMAS S35 C1.xlsx"
+    },
+    {
+      "mc": "3046/341",
+      "family": "CAZADORA",
+      "week": "35",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C1.xlsx",
+      "id": "TOP MERMAS S35 C1.xlsx"
+    },
+    {
+      "mc": "8372/248",
+      "family": "PANTALON",
+      "week": "35",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C1.xlsx",
+      "id": "TOP MERMAS S35 C1.xlsx"
+    },
+    {
+      "mc": "4344/650",
+      "family": "CAZADORA",
+      "week": "35",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C1.xlsx",
+      "id": "TOP MERMAS S35 C1.xlsx"
+    },
+    {
+      "mc": "8372/242",
+      "family": "PANTALON",
+      "week": "35",
+      "cycle": "1",
+      "kind": "original",
+      "file": "TOP MERMAS S35 C1.xlsx",
+      "id": "TOP MERMAS S35 C1.xlsx"
+    }
+  ],
+  "sourceIndex": {
+    "3046/334": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 34 C2",
+        "SEM 35 C2",
+        "SEM 36 C1",
+        "SEM 37 C1",
+        "SEM 37 C2",
+        "SEM 38 C1",
+        "SEM 38 C2",
+        "SEM 39 C1"
+      ],
+      "files": 8
+    },
+    "8372/241": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 33 C2",
+        "SEM 34 C2",
+        "SEM 36 C1",
+        "SEM 37 C2",
+        "SEM 38 C2",
+        "SEM 39 C1"
+      ],
+      "files": 6
+    },
+    "3046/235": {
+      "family": "ANORAK",
+      "cycles": [
+        "SEM 39 C1"
+      ],
+      "files": 1
+    },
+    "8372/242": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 33 C2",
+        "SEM 34 C2",
+        "SEM 35 C1",
+        "SEM 35 C2",
+        "SEM 36 C1",
+        "SEM 36 C2",
+        "SEM 37 C2",
+        "SEM 38 C1",
+        "SEM 39 C1"
+      ],
+      "files": 9
+    },
+    "0085/817": {
+      "family": "CAMISETA",
+      "cycles": [
+        "SEM 39 C1"
+      ],
+      "files": 1
+    },
+    "8741/267": {
+      "family": "CAMISA",
+      "cycles": [
+        "SEM 38 C2"
+      ],
+      "files": 1
+    },
+    "4387/174": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 38 C2"
+      ],
+      "files": 1
+    },
+    "6318/329": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 38 C2"
+      ],
+      "files": 1
+    },
+    "3046/234": {
+      "family": "ANORAK",
+      "cycles": [
+        "SEM 37 C1",
+        "SEM 38 C1"
+      ],
+      "files": 2
+    },
+    "8741/252": {
+      "family": "CAMISA",
+      "cycles": [
+        "SEM 36 C2",
+        "SEM 38 C1"
+      ],
+      "files": 2
+    },
+    "2753/223": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 38 C1"
+      ],
+      "files": 1
+    },
+    "9929/122": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 31 C2",
+        "SEM 32 C2",
+        "SEM 33 C1",
+        "SEM 37 C2"
+      ],
+      "files": 4
+    },
+    "8741/380": {
+      "family": "BLAZER",
+      "cycles": [
+        "SEM 37 C2"
+      ],
+      "files": 1
+    },
+    "4387/493": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 36 C2",
+        "SEM 37 C1"
+      ],
+      "files": 2
+    },
+    "5644/732": {
+      "family": "TOPS Y OTRAS P.",
+      "cycles": [
+        "SEM 37 C1"
+      ],
+      "files": 1
+    },
+    "2753/229": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 37 C1"
+      ],
+      "files": 1
+    },
+    "3046/331": {
+      "family": "ABRIGO",
+      "cycles": [
+        "SEM 36 C2"
+      ],
+      "files": 1
+    },
+    "3293/276": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 35 C1",
+        "SEM 36 C2"
+      ],
+      "files": 2
+    },
+    "4387/268": {
+      "family": "CAMISA",
+      "cycles": [
+        "SEM 36 C1"
+      ],
+      "files": 1
+    },
+    "8372/248": {
+      "family": "PANTALON",
+      "cycles": [
+        "SEM 32 C2",
+        "SEM 33 C2",
+        "SEM 34 C1",
+        "SEM 34 C2",
+        "SEM 35 C1",
+        "SEM 35 C2",
+        "SEM 36 C1"
+      ],
+      "files": 7
+    },
+    "5643/105": {
+      "family": "SUDADERA",
+      "cycles": [
+        "SEM 35 C2"
+      ],
+      "files": 1
+    },
+    "6318/267": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 35 C2"
+      ],
+      "files": 1
+    },
+    "4968/224": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 35 C2"
+      ],
+      "files": 1
+    },
+    "3046/341": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 35 C1"
+      ],
+      "files": 1
+    },
+    "4344/650": {
+      "family": "CAZADORA",
+      "cycles": [
+        "SEM 34 C1",
+        "SEM 35 C1"
+      ],
+      "files": 2
+    }
+  },
+  "compositionIndex": {
+    "3046/334||37||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "1"
+      }
+    ],
+    "3046/234||37||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "1"
+      }
+    ],
+    "4387/493||37||1": [
+      {
+        "row": 3,
+        "label": "VISCOSA",
+        "percentage": "0.3"
+      },
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "0.66"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "0.04"
+      }
+    ],
+    "5644/732||37||1": [
+      {
+        "row": 8,
+        "label": "LYOCELL",
+        "percentage": "0.95"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "0.05"
+      }
+    ],
+    "2753/229||37||1": [
+      {
+        "row": 3,
+        "label": "VISCOSA",
+        "percentage": "0.29"
+      },
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "0.69"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "0.02"
+      }
+    ],
+    "3046/331||36||2": [],
+    "8741/252||36||2": [],
+    "4387/493||36||2": [],
+    "8372/242||36||2": [],
+    "3293/276||36||2": [],
+    "8372/242||36||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "97%"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "3%"
+      }
+    ],
+    "8372/241||36||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "97%"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "3%"
+      }
+    ],
+    "3046/334||36||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "4387/268||36||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "8372/248||36||1": [
+      {
+        "row": 5,
+        "label": "ALGODÓN",
+        "percentage": "32%"
+      },
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "63%"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "5%"
+      }
+    ],
+    "8741/267||38||2": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "4387/174||38||2": [
+      {
+        "row": 5,
+        "label": "ALGODÓN",
+        "percentage": "53%"
+      },
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "47%"
+      }
+    ],
+    "3046/334||38||2": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "6318/329||38||2": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "42%"
+      }
+    ],
+    "8372/241||38||2": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "97%"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "3%"
+      }
+    ],
+    "3046/234||38||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "3046/334||38||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "8741/252||38||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "100%"
+      }
+    ],
+    "2753/223||38||1": [
+      {
+        "row": 3,
+        "label": "VISCOSA",
+        "percentage": "28%"
+      },
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "68%"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "4%"
+      }
+    ],
+    "8372/242||38||1": [
+      {
+        "row": 6,
+        "label": "POLIESTER",
+        "percentage": "97%"
+      },
+      {
+        "row": 10,
+        "label": "ELASTANO",
+        "percentage": "3%"
+      }
+    ]
+  }
+}
