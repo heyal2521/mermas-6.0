@@ -167,19 +167,37 @@ def register_history_api(app: Flask) -> None:
                     return jsonify(payload)
 
                 body = request.get_json(silent=True) or {}
-                record = _clean_record(body.get("record") or {})
-                records = payload.setdefault("records", [])
-                index = next((i for i, item in enumerate(records) if item.get("key") == record["key"]), None)
-                action = "inserted"
-                if index is None:
-                    records.append(record)
+                raw_records = body.get("records")
+                is_batch = isinstance(raw_records, list)
+                if is_batch:
+                    if not raw_records:
+                        raise ValueError("No se han recibido registros para sincronizar.")
+                    if len(raw_records) > 250:
+                        raise ValueError("La sincronización admite un máximo de 250 registros.")
+                    clean_records = [_clean_record(item or {}) for item in raw_records]
                 else:
-                    records[index] = record
-                    action = "replaced"
+                    clean_records = [_clean_record(body.get("record") or {})]
+
+                records = payload.setdefault("records", [])
+                indexes = {item.get("key"): i for i, item in enumerate(records)}
+                inserted = 0
+                replaced = 0
+                for record in clean_records:
+                    index = indexes.get(record["key"])
+                    if index is None:
+                        indexes[record["key"]] = len(records)
+                        records.append(record)
+                        inserted += 1
+                    else:
+                        records[index] = record
+                        replaced += 1
                 records.sort(key=lambda item: (item.get("year", 0), int(item.get("week", 0)), int(item.get("cycle", 0)), item.get("kind", "")))
                 payload["updatedAt"] = datetime.now(timezone.utc).isoformat()
                 _save(payload, sha)
-                return jsonify({"ok": True, "action": action, "record": record, "total": len(records)})
+                if is_batch:
+                    return jsonify({"ok": True, "inserted": inserted, "replaced": replaced, "processed": len(clean_records), "total": len(records)})
+                action = "inserted" if inserted else "replaced"
+                return jsonify({"ok": True, "action": action, "record": clean_records[0], "total": len(records)})
         except ValueError as exc:
             return jsonify({"ok": False, "error": str(exc)}), 400
         except Exception as exc:
