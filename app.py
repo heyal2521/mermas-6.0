@@ -17,6 +17,7 @@ import re
 import hashlib
 import hmac
 import time
+import threading
 
 app = Flask(__name__)
 app.secret_key = "top5_secret_key"
@@ -30,6 +31,7 @@ SHARED_DASHBOARD_WRITE_KEY = os.getenv("SHARED_DASHBOARD_WRITE_KEY", "").strip()
 SHARED_DASHBOARD_PATH = os.getenv("SHARED_DASHBOARD_PATH", f"{GITHUB_HISTORY_DIR.strip('/')}/top_mermas_dashboard_delta.json")
 SHARED_DASHBOARD_MAX_JSON = 1 * 1024 * 1024
 SHARED_DASHBOARD_UPLOADS_BY_IP = {}
+SHARED_DASHBOARD_LOCK = threading.Lock()
 
 LAST_GENERATED_TOP = {
     "records": None,
@@ -1192,6 +1194,14 @@ def index():
     return render_template_string(HTML)
 
 
+def _shared_dashboard_write_lock(fn):
+    def wrapped(*args, **kwargs):
+        with SHARED_DASHBOARD_LOCK:
+            return fn(*args, **kwargs)
+    wrapped.__name__ = fn.__name__
+    return wrapped
+
+
 @app.after_request
 def shared_dashboard_cors(response):
     if request.path.startswith("/api/shared-dashboard"):
@@ -1212,6 +1222,7 @@ def get_shared_dashboard():
 
 
 @app.route('/api/shared-dashboard/import', methods=['POST'])
+@_shared_dashboard_write_lock
 def import_shared_dashboard_file():
     if not SHARED_DASHBOARD_WRITE_KEY:
         return jsonify({"error": "Falta configurar SHARED_DASHBOARD_WRITE_KEY en el servidor."}), 503
