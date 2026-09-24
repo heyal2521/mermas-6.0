@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, render_template_string, redirect, url_for, flash
+from flask import Flask, request, send_file, render_template_string, redirect, url_for, flash, jsonify
 from openpyxl import load_workbook, Workbook
 from openpyxl.styles import Font, PatternFill, Border, Side, Alignment
 from openpyxl.utils import get_column_letter
@@ -14,6 +14,9 @@ import json
 import tempfile
 import os
 import re
+import hashlib
+import hmac
+import time
 
 app = Flask(__name__)
 app.secret_key = "top5_secret_key"
@@ -23,6 +26,11 @@ GITHUB_REPO = os.getenv("GITHUB_REPO", "heyal2521/mermas-v6").strip()
 GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main").strip()
 GITHUB_HISTORY_DIR = os.getenv("GITHUB_HISTORY_DIR", "historico").strip()
 SUMMARY_JSON_NAME = "historico_resumen.json"
+SHARED_DASHBOARD_WRITE_KEY = os.getenv("SHARED_DASHBOARD_WRITE_KEY", "").strip()
+SHARED_DASHBOARD_PATH = os.getenv("SHARED_DASHBOARD_PATH", f"{GITHUB_HISTORY_DIR.strip('/')}/top_mermas_dashboard_delta.json")
+SHARED_DASHBOARD_MAX_JSON = 1 * 1024 * 1024
+app.config["MAX_CONTENT_LENGTH"] = SHARED_DASHBOARD_MAX_JSON
+SHARED_DASHBOARD_UPLOADS_BY_IP = {}
 
 LAST_GENERATED_TOP = {
     "records": None,
@@ -625,6 +633,46 @@ def _summary_repo_path():
     return f"{GITHUB_HISTORY_DIR.strip('/')}/{SUMMARY_JSON_NAME}"
 
 
+def _default_shared_dashboard_state():
+    return {
+        "format": "TOP_MERMAS_DASHBOARD_SHARED",
+        "version": 1,
+        "exportedAt": None,
+        "rows": [],
+        "sourceIndex": {},
+        "compositionIndex": {},
+        "files": {},
+    }
+
+
+def _load_shared_dashboard_state():
+    if not GITHUB_TOKEN:
+        return None
+    info = _github_get_file_info(SHARED_DASHBOARD_PATH)
+    if not info or not info.get("content"):
+        return _default_shared_dashboard_state()
+    try:
+        state = json.loads(base64.b64decode(info["content"]).decode("utf-8"))
+        if state.get("format") != "TOP_MERMAS_DASHBOARD_SHARED":
+            return _default_shared_dashboard_state()
+        for key, default in _default_shared_dashboard_state().items():
+            state.setdefault(key, default)
+        return state
+    except Exception as e:
+        print(f"[Shared dashboard load error] {e}")
+        return None
+
+
+def _save_shared_dashboard_state(state):
+    state["exportedAt"] = datetime.utcnow().isoformat() + "Z"
+    text = json.dumps(state, ensure_ascii=False, separators=(",", ":"))
+    return _github_upsert_text_file(
+        SHARED_DASHBOARD_PATH,
+        text,
+        "Update shared TOP MERMAS dashboard",
+    )
+
+
 def _default_summary_state():
     return {
         "updated_at": None,
@@ -1143,6 +1191,130 @@ def to_excel_percent_from_cell(value, number_format=None):
 @app.route('/', methods=['GET'])
 def index():
     return render_template_string(HTML)
+
+
+@app.after_request
+def shared_dashboard_cors(response):
+    if request.path.startswith("/api/shared-dashboard"):
+        response.headers["Access-Control-Allow-Origin"] = "https://heyal2521.github.io"
+        response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+        response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+        response.headers["Access-Control-Max-Age"] = "600"
+    return response
+
+
+@app.route('/api/shared-dashboard', methods=['GET'])
+def get_shared_dashboard():
+    state = _load_shared_dashboard_state()
+    if state is None:
+        return jsonify({"error": "El almacenamiento compartido no está disponible."}), 503
+    public_state = {key: value for key, value in state.items() if key != "files"}
+    return jsonify(public_state)
+
+
+@app.route('/api/shared-dashboard/import', methods=['POST'])
+def import_shared_dashboard_file():
+    if not SHARED_DASHBOARD_WRITE_KEY:
+        return jsonify({"error": "Falta configurar SHARED_DASHBOARD_WRITE_KEY en el servidor."}), 503
+    auth = request.headers.get("Authorization", "")
+    supplied_key = auth[7:].strip() if auth.lower().startswith("bearer ") else ""
+    if not hmac.compare_digest(supplied_key, SHARED_DASHBOARD_WRITE_KEY):
+        return jsonify({"error": "Código compartido incorrecto."}), 401
+
+    now = time.time()
+    client_ip = request.remote_addr or "unknown"
+    recent = [t for t in SHARED_DASHBOARD_UPLOADS_BY_IP.get(client_ip, []) if now - t < 60]
+    if len(recent) >= 20:
+        return jsonify({"error": "Se alcanzó el límite temporal de importaciones. Prueba en un minuto."}), 429
+    recent.append(now)
+    SHARED_DASHBOARD_UPLOADS_BY_IP[client_ip] = recent
+
+    payload = request.get_json(silent=True) or {}
+    kind = str(payload.get("kind", "")).strip().lower()
+    rows_in = payload.get("rows")
+    compositions_in = payload.get("compositionIndex", {})
+    if kind not in ("original", "generated") or not isinstance(rows_in, list) or not rows_in or len(rows_in) > 150:
+        return jsonify({"error": "El resumen enviado no tiene un formato válido."}), 400
+    if not isinstance(compositions_in, dict) or len(compositions_in) > 150:
+        return jsonify({"error": "El índice de composiciones no tiene un formato válido."}), 400
+
+    rows = []
+    periods = set()
+    for item in rows_in:
+        if not isinstance(item, dict):
+            return jsonify({"error": "Hay una fila del resumen con formato no válido."}), 400
+        mc = re.sub(r"\s+", "", str(item.get("mc", ""))).upper().replace("-", "/")
+        family = str(item.get("family", "Sin familia")).strip()[:80]
+        week = str(item.get("week", "")).strip()
+        cycle = str(item.get("cycle", "")).strip()
+        if not re.fullmatch(r"\d{2,8}/\d{2,8}", mc) or not week.isdigit() or not (1 <= int(week) <= 53) or cycle not in ("1", "2"):
+            return jsonify({"error": "El resumen contiene un MC, semana o ciclo no válido."}), 422
+        periods.add((week, cycle))
+        safe_name = f"TOP_GENERADO SEMANA {week} C{cycle}.xlsx" if kind == "generated" else f"TOP MERMAS S{week} C{cycle}.xlsx"
+        rows.append({"mc": mc, "family": family or "Sin familia", "week": week, "cycle": cycle, "kind": kind, "file": safe_name, "id": safe_name})
+    if len(periods) != 1:
+        return jsonify({"error": "Cada importación debe corresponder a una sola semana y ciclo."}), 422
+    week, cycle = next(iter(periods))
+
+    compositions = {}
+    allowed_labels = {"VISCOSA", "POLIAMIDA", "ALGODÓN", "ALGODON", "POLIESTER", "RAMIO", "LYOCELL", "LINO", "ELASTANO"}
+    if kind == "generated":
+        for raw_key, values in compositions_in.items():
+            if not isinstance(values, list) or len(values) > 8:
+                return jsonify({"error": "Una composición tiene un formato no válido."}), 400
+            match = re.fullmatch(r"(\d{2,8}/\d{2,8})\|(\|)(\d{1,2})\|(\|)(\d{1,2})", str(raw_key))
+            if not match or match.group(3) != week or match.group(5) != cycle:
+                return jsonify({"error": "Una composición no coincide con la semana y ciclo importados."}), 422
+            clean_values = []
+            for value in values:
+                if not isinstance(value, dict):
+                    continue
+                label = str(value.get("label", "")).strip().upper()
+                percentage = str(value.get("percentage", "")).strip()
+                row_num = value.get("row")
+                if label not in allowed_labels or not re.fullmatch(r"\d{1,3}(?:[.,]\d{1,2})?%?", percentage) or not isinstance(row_num, int) or not (3 <= row_num <= 10):
+                    continue
+                clean_values.append({"row": row_num, "label": "ALGODÓN" if label == "ALGODON" else label, "percentage": percentage})
+            compositions[str(raw_key).upper()] = clean_values
+    canonical = json.dumps({"kind": kind, "rows": rows, "compositionIndex": compositions}, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+    state = _load_shared_dashboard_state()
+    if state is None:
+        return jsonify({"error": "No se pudo leer el histórico compartido."}), 503
+    state.setdefault("files", {})
+    if digest in state["files"]:
+        return jsonify({"ok": True, "alreadyImported": True, "week": week, "cycle": cycle})
+
+    by_key = {f"{str(r.get('mc','')).upper()}||{r.get('week')}||{r.get('cycle')}": r for r in state.get("rows", [])}
+    for row in rows:
+        key = f"{row['mc'].upper()}||{week}||{cycle}"
+        existing = by_key.get(key)
+        if existing is None or (existing.get("kind") == "generated" and kind == "original"):
+            by_key[key] = row
+    state["rows"] = list(by_key.values())
+
+    if kind == "original":
+        source_index = state.setdefault("sourceIndex", {})
+        for row in rows:
+            key = row["mc"].upper()
+            entry = source_index.setdefault(key, {"family": row["family"], "cycles": [], "files": 0})
+            cycle_label = f"SEM {week} C{cycle}"
+            if cycle_label not in entry.setdefault("cycles", []):
+                entry["cycles"].append(cycle_label)
+            entry["cycles"].sort(key=lambda value: tuple(int(x) for x in re.search(r"SEM\s*(\d+)\s*C(\d+)", value).groups()))
+            entry["files"] = len(entry["cycles"])
+            if not entry.get("family") or entry["family"] == "Sin familia":
+                entry["family"] = row["family"]
+    state.setdefault("compositionIndex", {}).update(compositions)
+    state["files"][digest] = {"kind": kind, "week": week, "cycle": cycle, "importedAt": datetime.utcnow().isoformat() + "Z"}
+    if len(state["files"]) > 2000:
+        ordered_hashes = sorted(state["files"], key=lambda key: state["files"][key].get("importedAt", ""))
+        for old_hash in ordered_hashes[:-1500]:
+            state["files"].pop(old_hash, None)
+    if not _save_shared_dashboard_state(state):
+        return jsonify({"error": "No se pudo guardar en el histórico compartido. Inténtalo de nuevo."}), 502
+    return jsonify({"ok": True, "alreadyImported": False, "week": week, "cycle": cycle, "models": len(rows)})
 
 
 @app.route('/generate', methods=['POST'])
