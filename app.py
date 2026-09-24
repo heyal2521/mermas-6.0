@@ -29,7 +29,6 @@ SUMMARY_JSON_NAME = "historico_resumen.json"
 SHARED_DASHBOARD_WRITE_KEY = os.getenv("SHARED_DASHBOARD_WRITE_KEY", "").strip()
 SHARED_DASHBOARD_PATH = os.getenv("SHARED_DASHBOARD_PATH", f"{GITHUB_HISTORY_DIR.strip('/')}/top_mermas_dashboard_delta.json")
 SHARED_DASHBOARD_MAX_JSON = 1 * 1024 * 1024
-app.config["MAX_CONTENT_LENGTH"] = SHARED_DASHBOARD_MAX_JSON
 SHARED_DASHBOARD_UPLOADS_BY_IP = {}
 
 LAST_GENERATED_TOP = {
@@ -1220,6 +1219,8 @@ def import_shared_dashboard_file():
     supplied_key = auth[7:].strip() if auth.lower().startswith("bearer ") else ""
     if not hmac.compare_digest(supplied_key, SHARED_DASHBOARD_WRITE_KEY):
         return jsonify({"error": "Código compartido incorrecto."}), 401
+    if request.content_length and request.content_length > SHARED_DASHBOARD_MAX_JSON:
+        return jsonify({"error": "El resumen supera el tamaño permitido."}), 413
 
     now = time.time()
     client_ip = request.remote_addr or "unknown"
