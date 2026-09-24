@@ -9,6 +9,7 @@ from datetime import datetime
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
+from history_api_v59 import register_history_api
 import base64
 import json
 import tempfile
@@ -21,6 +22,7 @@ import threading
 
 app = Flask(__name__)
 app.secret_key = "top5_secret_key"
+register_history_api(app)
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "").strip()
 GITHUB_REPO = os.getenv("GITHUB_REPO", "heyal2521/mermas-v6").strip()
@@ -1192,6 +1194,14 @@ def to_excel_percent_from_cell(value, number_format=None):
 @app.route('/', methods=['GET'])
 def index():
     return render_template_string(HTML)
+
+
+@app.route('/v59', methods=['GET'])
+def generador_v59():
+    return send_file(
+        os.path.join(os.path.dirname(__file__), "top_mermas_generador_v59.html"),
+        mimetype="text/html",
+    )
 
 
 def _shared_dashboard_write_lock(fn):
