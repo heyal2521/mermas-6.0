@@ -1320,37 +1320,23 @@ function closeModelDetail(){
 async function updateHistoryWithGenerated(){
   const input=document.getElementById("updatedTopFile");
   const files=[...(input.files||[])];
-
-  if(!files.length){
-    setStatus("Selecciona primero el TOP_GENERADO.xlsx que hayas rellenado.","err");
-    return;
-  }
-
+  if(!files.length){setStatus("Selecciona primero el TOP_GENERADO.xlsx que hayas rellenado.","err");return;}
   try{
     setStatus(`Actualizando el histórico con ${files.length} TOP generado(s)…`,"info");
-    let synced=0,replaced=0;
+    let synced=0,replaced=0;const syncErrors=[];
     for(const file of files){
       const wb=new ExcelJS.Workbook();
       await wb.xlsx.load(await file.arrayBuffer());
-      const checklistSheets=wb.worksheets.filter(ws=>isChecklistSheet(ws));
-      if(!checklistSheets.length) throw new Error(`${file.name} no contiene hojas CHECKLIST reconocibles.`);
+      if(!wb.worksheets.some(ws=>isChecklistSheet(ws))) throw new Error(`${file.name} no contiene hojas CHECKLIST reconocibles.`);
       await replaceGeneratedHistory(file);
-      try{
-        const result=await syncCentralRecord(await buildCentralRecord(file,"generated"));
-        synced++; if(result.action==="replaced") replaced++;
-      }catch(syncError){console.warn(syncError);}
+      try{const result=await syncCentralRecord(await buildCentralRecord(file,"generated"));synced++;if(result.action==="replaced")replaced++;}
+      catch(syncError){console.warn(syncError);syncErrors.push(`${file.name}: ${syncError.message||syncError}`);}
     }
     await renderHistory();
-
-    const panel=document.getElementById("dashboardPanel");
-    if(!panel.hidden){
-      await analyzeHistory();
-    }
-
-    setStatus(`Histórico actualizado con ${files.length} fichero(s). ${synced} sincronizado(s)${replaced?` · ${replaced} sustituido(s)`:""}.`,"ok");
-  }catch(e){
-    setStatus("No se pudo actualizar el histórico.\n\n"+(e.message||String(e)),"err");
-  }
+    const panel=document.getElementById("dashboardPanel");if(!panel.hidden) await analyzeHistory();
+    if(syncErrors.length) setStatus(`TOP_GENERADO actualizado localmente; ${synced} de ${files.length} sincronizados.\n${syncErrors.join("\n")}\nPulsa “Sincronizar todo” cuando vuelva a estar conectado.`,"err");
+    else setStatus(`Histórico actualizado con ${files.length} TOP_GENERADO y sincronizado para todos${replaced?` · ${replaced} sustituido(s)`:""}.`,"ok");
+  }catch(e){setStatus("No se pudo actualizar el histórico.\n\n"+(e.message||String(e)),"err");}
 }
 
 
@@ -1411,48 +1397,30 @@ async function exportHistoryJson(){
 async function importHistoryJson(file){
   try{
     setStatus("Importando histórico…","info");
-
-    const text=await file.text();
-    const payload=JSON.parse(text);
-
+    const payload=JSON.parse(await file.text());
     if(payload.format!=="TOP_MERMAS_HISTORICO" || !Array.isArray(payload.items)){
       throw new Error("El archivo no es un histórico TOP MERMAS válido.");
     }
-
     const db=await dbReady;
-
     await new Promise((resolve,reject)=>{
       const tx=db.transaction(STORE_NAME,"readwrite");
       const store=tx.objectStore(STORE_NAME);
-
       for(const item of payload.items){
         if(!item || !item.dataBase64) continue;
-
-        const record={
-          name:item.name||"FICHERO_IMPORTADO.xlsx",
-          size:item.size||0,
-          type:item.type||"application/octet-stream",
-          kind:item.kind||"original",
-          sourceName:item.sourceName||"",
-          addedAt:item.addedAt||new Date().toISOString(),
-          data:base64ToBytes(item.dataBase64)
-        };
-
+        const record={name:item.name||"FICHERO_IMPORTADO.xlsx",size:item.size||0,type:item.type||"application/octet-stream",kind:item.kind||"original",sourceName:item.sourceName||"",addedAt:item.addedAt||new Date().toISOString(),data:base64ToBytes(item.dataBase64)};
         if(item.compositionIndex) record.compositionIndex=item.compositionIndex;
         store.add(record);
       }
-
       tx.oncomplete=resolve;
       tx.onerror=()=>reject(tx.error);
       tx.onabort=()=>reject(tx.error||new Error("Importación cancelada."));
     });
-
     await renderHistory();
-
+    const shared=await syncAllLocalHistory();
     const panel=document.getElementById("dashboardPanel");
     if(!panel.hidden) await analyzeHistory();
-
-    setStatus(`Histórico importado correctamente: ${payload.items.length} ficheros añadidos.`,"ok");
+    if(shared) setStatus(`Histórico importado y sincronizado: ${payload.items.length} ficheros añadidos localmente; sus ciclos válidos ya están disponibles para todos.`,"ok");
+    else setStatus("Histórico importado en este ordenador, pero no se pudo sincronizar con el histórico común. Pulsa “Sincronizar todo” cuando vuelva a estar conectado.","err");
   }catch(e){
     console.error(e);
     setStatus("No se pudo importar el histórico.\n\n"+(e.message||String(e)),"err");
@@ -1828,7 +1796,7 @@ async function renderHistory(){
   try{
     const items=await getHistory();
     box.innerHTML = items.length
-      ? '<div class="history-saved">✓ Fichero guardado en el histórico local</div>'
+      ? '<div class="history-saved">✓ Copia local guardada; el estado compartido aparece abajo</div>'
       : '<div class="history-empty">El histórico local está preparado.</div>';
   }catch(e){
     box.innerHTML='<div class="history-empty">Histórico local no disponible.</div>';
@@ -1867,38 +1835,33 @@ async function syncAllLocalHistory(){
     const items=await getHistory();
     if(!items.length) throw new Error("Este navegador no contiene ficheros históricos para sincronizar.");
     setStatus(`Preparando ${items.length} fichero(s) para el histórico compartido…`,"info");
-
-    const byKey=new Map();
-    let skipped=0;
+    const byKey=new Map();let skipped=0;
     for(let i=0;i<items.length;i++){
       const item=items[i];
       try{
         setStatus(`Preparando histórico compartido: ${i+1} de ${items.length}…`,"info");
         const file=new File([item.data],item.name||"FICHERO_HISTORICO.xlsx",{type:item.type||"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
         const record=await buildCentralRecord(file,item.kind||"original",item.year);
-        byKey.set(record.key,record);
-      }catch(error){
-        skipped++;
-        console.warn("Fichero histórico omitido",item?.name,error);
-      }
+        if(!byKey.has(record.key)) byKey.set(record.key,record);
+      }catch(error){skipped++;console.warn("Fichero histórico omitido",item?.name,error);}
     }
-
     const records=[...byKey.values()];
     if(!records.length) throw new Error("No se encontró ningún fichero histórico válido para sincronizar.");
-    setStatus(`Enviando ${records.length} ciclo(s) al histórico compartido…`,"info");
-    const response=await fetch(CENTRAL_HISTORY_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({records})});
-    const result=await response.json().catch(()=>({}));
-    if(!response.ok || !result.ok) throw new Error(result.error||`Servidor compartido: ${response.status}`);
+    let inserted=0,replaced=0,processed=0;
+    for(let offset=0;offset<records.length;offset+=250){
+      const chunk=records.slice(offset,offset+250);
+      setStatus(`Enviando ciclos ${offset+1}–${offset+chunk.length} de ${records.length} al histórico compartido…`,"info");
+      const response=await fetch(CENTRAL_HISTORY_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({records:chunk})});
+      const result=await response.json().catch(()=>({}));
+      if(!response.ok||!result.ok) throw new Error(result.error||`Servidor compartido: ${response.status}`);
+      inserted+=result.inserted||0;replaced+=result.replaced||0;processed+=result.processed||chunk.length;
+    }
     await loadCentralHistory();
-    const panel=document.getElementById("dashboardPanel");
-    if(!panel.hidden) await analyzeHistory();
-    setStatus(`Sincronización completa: ${result.processed} ciclo(s) compartidos · ${result.inserted} nuevos · ${result.replaced} sustituidos${skipped?` · ${skipped} fichero(s) omitido(s)`:""}.`,"ok");
-  }catch(error){
-    console.error(error);
-    setStatus("No se pudo sincronizar todo el histórico.\n\n"+(error.message||String(error)),"err");
-  }finally{
-    button.disabled=false;
-  }
+    const panel=document.getElementById("dashboardPanel");if(!panel.hidden) await analyzeHistory();
+    setStatus(`Sincronización completa: ${processed} ciclo(s) compartidos · ${inserted} nuevos · ${replaced} sustituidos${skipped?` · ${skipped} fichero(s) omitido(s)`:""}.`,"ok");
+    return true;
+  }catch(error){console.error(error);setStatus("No se pudo sincronizar todo el histórico.\n\n"+(error.message||String(error)),"err");return false;}
+  finally{button.disabled=false;}
 }
 
 async function syncCentralRecord(record){
@@ -1930,26 +1893,22 @@ async function loadCentralHistory(){
 input.addEventListener("change",async()=>{
   const files=[...(input.files||[])];
   nameEl.textContent=files.length?`${files.length} fichero(s) seleccionado(s)`:"Ningún fichero seleccionado";
-  currentFileCaches=[]; currentFileCache=null;
-  if(!files.length) return;
-  let synced=0,replaced=0;
+  currentFileCaches=[];currentFileCache=null;
+  if(!files.length)return;
+  let synced=0,replaced=0;const syncErrors=[];
   try{
     for(const file of files){
       const cached={name:file.name,type:file.type,size:file.size,data:await file.arrayBuffer()};
       currentFileCaches.push(cached);
       await saveHistoryFile(file,cached.data,"original",file.name);
-      try{
-        const result=await syncCentralRecord(await buildCentralRecord(file,"original"));
-        synced++; if(result.action==="replaced") replaced++;
-      }catch(syncError){console.warn(syncError);}
+      try{const result=await syncCentralRecord(await buildCentralRecord(file,"original"));synced++;if(result.action==="replaced")replaced++;}
+      catch(syncError){console.warn(syncError);syncErrors.push(`${file.name}: ${syncError.message||syncError}`);}
     }
     currentFileCache=currentFileCaches[0]||null;
     await renderHistory();
-    setStatus(`${files.length} MERMAS cargado(s). ${synced} sincronizado(s)${replaced?` · ${replaced} sustituido(s) por duplicado`:""}.`,"ok");
-  }catch(e){
-    currentFileCaches=[]; currentFileCache=null;
-    setStatus("No se pudieron cargar los ficheros MERMAS.\n\n"+(e.message||String(e)),"err");
-  }
+    if(syncErrors.length)setStatus(`${files.length} MERMAS guardado(s) localmente; ${synced} sincronizado(s).\n${syncErrors.join("\n")}\nPulsa “Sincronizar todo” cuando vuelva a estar conectado.`,"err");
+    else setStatus(`${files.length} MERMAS cargado(s) y sincronizado(s) para todos${replaced?` · ${replaced} sustituido(s) por duplicado`:""}.`,"ok");
+  }catch(e){currentFileCaches=[];currentFileCache=null;setStatus("No se pudieron cargar los ficheros MERMAS.\n\n"+(e.message||String(e)),"err");}
 });
 renderHistory();
 document.getElementById("updateHistory").onclick=updateHistoryWithGenerated;
