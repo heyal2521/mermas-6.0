@@ -32,7 +32,7 @@ button{border:0;border-radius:13px;padding:12px 18px;font-weight:800;cursor:poin
 .dashboard-panel>.dash-card{margin-top:14px}
 @media(max-width:900px){.filters{grid-template-columns:1fr 1fr}.filters #filterMc{grid-column:1/-1}.dash-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.dash-grid{grid-template-columns:1fr}.dashboard-head{flex-direction:column}.dash-card th,.dash-card td{font-size:10px;padding:7px 5px}}
 @media(max-width:600px){.filters{grid-template-columns:1fr}.filters #filterMc{grid-column:auto}.dash-kpis{grid-template-columns:1fr 1fr}.dashboard-panel{padding:14px}.dash-card{padding:10px}}
-.year-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;align-items:end;margin-bottom:14px}.year-row input{background:#fff;border-style:solid}.sync-state{margin-top:10px;padding:10px 12px;border-radius:12px;background:#eef4fb;color:#1f4e78;font-size:12px;font-weight:700}.sync-state.ok{background:#edf8f1;color:#1f7a4d}.sync-state.err{background:#fff1f1;color:#a11}.week-chip-list{display:flex;flex-wrap:wrap;gap:7px;max-height:150px;overflow:auto;padding:8px;border:1px solid #cfd9e6;border-radius:12px;background:#fff}.week-chip{padding:8px 11px;border:1px solid #cfd9e6;background:#f8fbff;color:#1f4e78;border-radius:999px;font-size:11px}.week-chip[aria-pressed="true"]{background:#1f4e78;color:#fff;border-color:#1f4e78}.ranking-badge{display:inline-flex;min-width:28px;justify-content:center;padding:4px 8px;border-radius:999px;background:#eef4fb;color:#1f4e78;font-weight:800}.ranking-critical{background:#fee2e2;color:#991b1b}.ranking-high{background:#ffedd5;color:#9a3412}@media(max-width:600px){.year-row{grid-template-columns:1fr}}
+.year-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;align-items:end;margin-bottom:14px}.year-row input{background:#fff;border-style:solid}.sync-state{margin-top:10px;padding:10px 12px;border-radius:12px;background:#eef4fb;color:#1f4e78;font-size:12px;font-weight:700}.sync-state.ok{background:#edf8f1;color:#1f7a4d}.sync-state.err{background:#fff1f1;color:#a11}.shared-files-card{margin-top:12px;padding:14px 15px;border:1px solid #dbe3ef;border-radius:16px;background:#fbfdff}.shared-files-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.shared-files-head h3{margin:0;font-size:14px}.shared-files-list{display:grid;gap:7px;margin-top:10px}.shared-file-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 10px;border-radius:10px;background:#f4f7fb;font-size:12px}.shared-file-row a{color:#1f4e78;font-weight:700;overflow-wrap:anywhere}.shared-file-meta{color:#667085;white-space:nowrap}.week-chip-list{display:flex;flex-wrap:wrap;gap:7px;max-height:150px;overflow:auto;padding:8px;border:1px solid #cfd9e6;border-radius:12px;background:#fff}.week-chip{padding:8px 11px;border:1px solid #cfd9e6;background:#f8fbff;color:#1f4e78;border-radius:999px;font-size:11px}.week-chip[aria-pressed="true"]{background:#1f4e78;color:#fff;border-color:#1f4e78}.ranking-badge{display:inline-flex;min-width:28px;justify-content:center;padding:4px 8px;border-radius:999px;background:#eef4fb;color:#1f4e78;font-weight:800}.ranking-critical{background:#fee2e2;color:#991b1b}.ranking-high{background:#ffedd5;color:#9a3412}@media(max-width:600px){.year-row{grid-template-columns:1fr}}
 .model-link{color:#1f4e78;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}.model-link:hover{font-weight:800}
 .model-modal-backdrop{position:fixed;inset:0;background:rgba(18,32,51,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}.model-modal-backdrop.open{display:flex}.model-modal{width:min(980px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:20px;border:1px solid #dbe3ef;box-shadow:0 24px 70px rgba(18,32,51,.25);padding:20px}.model-modal-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.model-modal-head h2{margin:0;font-size:24px}.model-modal-close{background:#eef4fb;color:#1f4e78;padding:9px 13px;border-radius:11px}.model-modal-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.model-modal-meta .meta{border:1px solid #dbe3ef;border-radius:13px;padding:12px;background:#fbfdff}.model-modal-meta .label{font-size:11px;color:#667085}.model-modal-meta .value{font-size:18px;font-weight:800;margin-top:4px}.model-detail-table{width:100%;border-collapse:collapse}.model-detail-table th,.model-detail-table td{padding:9px 8px;border-bottom:1px solid #edf1f6;text-align:left;font-size:12px;vertical-align:top}.model-detail-table th{background:#eef4fb}.model-detail-empty{color:#667085;font-size:12px;padding:12px 0}.model-detail-comp span{display:inline-block;margin:2px 5px 2px 0;padding:4px 7px;border-radius:8px;background:#f4f7fb;border:1px solid #dbe3ef}.model-detail-footer{margin-top:14px;padding:10px 12px;border-radius:11px;background:#fbfdff;color:#667085;font-size:11px;line-height:1.5}@media(max-width:700px){.model-modal-meta{grid-template-columns:1fr}.model-modal{padding:14px}}
 
@@ -81,8 +81,9 @@ button{border:0;border-radius:13px;padding:12px 18px;font-weight:800;cursor:poin
   <button class="secondary" id="updateHistory" type="button">Actualizar histórico</button>
 </div>
 <div id="syncState" class="sync-state">Histórico compartido: pendiente de conexión.</div>
+<div class="shared-files-card"><div class="shared-files-head"><h3>Excel compartidos (públicos)</h3><button class="secondary" id="refreshSharedFiles" type="button">Actualizar lista</button></div><p class="note">Los ficheros archivados aquí son públicos y cualquiera puede descargarlos.</p><div id="sharedFilesList" class="shared-files-list">Cargando archivos compartidos…</div></div>
 <div id="status" class="status"></div>
-<div class="note">Procesamiento de Excel en el navegador. ExcelJS 4.4.0 está integrado en esta página, por lo que la generación funciona sin depender de jsDelivr. La conexión solo se utiliza para sincronizar el histórico compartido.</div>
+<div class="note">Los Excel archivados se guardan en un repositorio público y cualquiera podrá verlos y descargarlos. El procesamiento y generación se ejecutan en el navegador.</div>
 
 </section>
 
@@ -238,6 +239,7 @@ let centralHistoryRecords = [];
 const CENTRAL_HISTORY_API = (location.protocol==="file:" || location.hostname.endsWith("github.io"))
   ? "https://mermas-6-0.onrender.com/api/v59/history"
   : "/api/v59/history";
+const CENTRAL_FILES_API = CENTRAL_HISTORY_API.replace(/\/history$/, "/files");
 
 function selectedHistoryYear(){
   const value=Number(document.getElementById("historyYear")?.value);
@@ -253,6 +255,45 @@ function syncState(text,cls=""){
 }
 
 function setStatus(text, cls){ statusEl.textContent=text; statusEl.className="status "+cls; }
+
+function renderSharedFiles(files){
+  const box=document.getElementById("sharedFilesList");
+  if(!box)return;
+  box.replaceChildren();
+  if(!files.length){box.textContent="Todavía no hay ficheros Excel archivados.";return;}
+  for(const file of files){
+    const row=document.createElement("div");row.className="shared-file-row";
+    const link=document.createElement("a");link.href=file.url;link.textContent=file.name||"Fichero Excel";link.target="_blank";link.rel="noopener noreferrer";
+    const meta=document.createElement("span");meta.className="shared-file-meta";
+    const mb=(Number(file.size||0)/(1024*1024)).toFixed(1);
+    const when=file.uploadedAt?new Date(file.uploadedAt).toLocaleDateString("es-ES"):"";
+    meta.textContent=mb+" MB"+(when?" · "+when:"");
+    row.append(link,meta);box.appendChild(row);
+  }
+}
+async function loadSharedFiles(){
+  const box=document.getElementById("sharedFilesList");
+  try{
+    const response=await fetch(CENTRAL_FILES_API+"?v="+Date.now(),{cache:"no-store"});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok||!result.ok)throw new Error(result.error||"Servidor compartido: "+response.status);
+    renderSharedFiles(Array.isArray(result.files)?result.files:[]);
+    return result.files||[];
+  }catch(error){
+    if(box)box.textContent="No se pudo cargar la lista de Excel compartidos. Comprueba la conexión e inténtalo de nuevo.";
+    throw error;
+  }
+}
+async function uploadSharedFile(file){
+  if(file.size>15*1024*1024)throw new Error(file.name+": supera el límite de 15 MB del archivo público.");
+  const form=new FormData();form.append("file",file,file.name);
+  const response=await fetch(CENTRAL_FILES_API,{method:"POST",body:form});
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok||!result.ok)throw new Error(result.error||"Servidor compartido: "+response.status);
+  loadSharedFiles().catch(error=>console.warn("No se pudo refrescar el archivo público",error));
+  return result.file;
+}
+
 function b64Bytes(b64){ const s=atob(b64), a=new Uint8Array(s.length); for(let i=0;i<s.length;i++) a[i]=s.charCodeAt(i); return a; }
 function raw(v){ return v && typeof v==="object" && "result" in v ? v.result : v; }
 function clone(v){ return v==null ? v : JSON.parse(JSON.stringify(v)); }
@@ -1329,13 +1370,14 @@ async function updateHistoryWithGenerated(){
       await wb.xlsx.load(await file.arrayBuffer());
       if(!wb.worksheets.some(ws=>isChecklistSheet(ws))) throw new Error(`${file.name} no contiene hojas CHECKLIST reconocibles.`);
       await replaceGeneratedHistory(file);
+      try{await uploadSharedFile(file);}catch(archiveError){console.warn(archiveError);syncErrors.push(`${file.name}: no se pudo archivar el Excel público (${archiveError.message||archiveError})`);}
       try{const result=await syncCentralRecord(await buildCentralRecord(file,"generated"));synced++;if(result.action==="replaced")replaced++;}
       catch(syncError){console.warn(syncError);syncErrors.push(`${file.name}: ${syncError.message||syncError}`);}
     }
     await renderHistory();
     const panel=document.getElementById("dashboardPanel");if(!panel.hidden) await analyzeHistory();
-    if(syncErrors.length) setStatus(`TOP_GENERADO actualizado localmente; ${synced} de ${files.length} sincronizados.\n${syncErrors.join("\n")}\nPulsa “Sincronizar todo” cuando vuelva a estar conectado.`,"err");
-    else setStatus(`Histórico actualizado con ${files.length} TOP_GENERADO y sincronizado para todos${replaced?` · ${replaced} sustituido(s)`:""}.`,"ok");
+    if(syncErrors.length) setStatus(`El histórico se actualizó parcialmente: ${synced} de ${files.length} resúmenes sincronizados.\n${syncErrors.join("\n")}\nPulsa “Sincronizar todo” cuando vuelva a estar conectado.`,"err");
+    else setStatus(`Histórico actualizado con ${files.length} TOP_GENERADO, sincronizado para todos y archivado públicamente${replaced?` · ${replaced} sustituido(s)`:""}.`,"ok");
   }catch(e){setStatus("No se pudo actualizar el histórico.\n\n"+(e.message||String(e)),"err");}
 }
 
@@ -1835,12 +1877,13 @@ async function syncAllLocalHistory(){
     const items=await getHistory();
     if(!items.length) throw new Error("Este navegador no contiene ficheros históricos para sincronizar.");
     setStatus(`Preparando ${items.length} fichero(s) para el histórico compartido…`,"info");
-    const byKey=new Map();let skipped=0;
+    const byKey=new Map();let skipped=0;const archiveErrors=[];
     for(let i=0;i<items.length;i++){
       const item=items[i];
       try{
         setStatus(`Preparando histórico compartido: ${i+1} de ${items.length}…`,"info");
         const file=new File([item.data],item.name||"FICHERO_HISTORICO.xlsx",{type:item.type||"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+        try{await uploadSharedFile(file);}catch(error){archiveErrors.push(`${file.name}: ${error.message||error}`);}
         const record=await buildCentralRecord(file,item.kind||"original",item.year);
         if(!byKey.has(record.key)) byKey.set(record.key,record);
       }catch(error){skipped++;console.warn("Fichero histórico omitido",item?.name,error);}
@@ -1858,8 +1901,10 @@ async function syncAllLocalHistory(){
     }
     await loadCentralHistory();
     const panel=document.getElementById("dashboardPanel");if(!panel.hidden) await analyzeHistory();
-    setStatus(`Sincronización completa: ${processed} ciclo(s) compartidos · ${inserted} nuevos · ${replaced} sustituidos${skipped?` · ${skipped} fichero(s) omitido(s)`:""}.`,"ok");
-    return true;
+    if(archiveErrors.length)setStatus(`Histórico de ciclos sincronizado (${processed} ciclos), pero ${archiveErrors.length} Excel no se pudo archivar públicamente.\n${archiveErrors.join("\n")}`,"err");
+    else setStatus(`Sincronización completa: ${processed} ciclo(s) compartidos · ${inserted} nuevos · ${replaced} sustituidos${skipped?` · ${skipped} fichero(s) omitido(s)`:""} · Excel públicos archivados.`,"ok");
+    loadSharedFiles().catch(console.warn);
+    return archiveErrors.length===0;
   }catch(error){console.error(error);setStatus("No se pudo sincronizar todo el histórico.\n\n"+(error.message||String(error)),"err");return false;}
   finally{button.disabled=false;}
 }
@@ -1901,17 +1946,20 @@ input.addEventListener("change",async()=>{
       const cached={name:file.name,type:file.type,size:file.size,data:await file.arrayBuffer()};
       currentFileCaches.push(cached);
       await saveHistoryFile(file,cached.data,"original",file.name);
+      try{await uploadSharedFile(file);}catch(archiveError){console.warn(archiveError);syncErrors.push(`${file.name}: no se pudo archivar el Excel público (${archiveError.message||archiveError})`);}
       try{const result=await syncCentralRecord(await buildCentralRecord(file,"original"));synced++;if(result.action==="replaced")replaced++;}
       catch(syncError){console.warn(syncError);syncErrors.push(`${file.name}: ${syncError.message||syncError}`);}
     }
     currentFileCache=currentFileCaches[0]||null;
     await renderHistory();
     if(syncErrors.length)setStatus(`${files.length} MERMAS guardado(s) localmente; ${synced} sincronizado(s).\n${syncErrors.join("\n")}\nPulsa “Sincronizar todo” cuando vuelva a estar conectado.`,"err");
-    else setStatus(`${files.length} MERMAS cargado(s) y sincronizado(s) para todos${replaced?` · ${replaced} sustituido(s) por duplicado`:""}.`,"ok");
+    else setStatus(`${files.length} MERMAS cargado(s), sincronizado(s) y archivado(s) públicamente para todos${replaced?` · ${replaced} sustituido(s) por duplicado`:""}.`,"ok");
   }catch(e){currentFileCaches=[];currentFileCache=null;setStatus("No se pudieron cargar los ficheros MERMAS.\n\n"+(e.message||String(e)),"err");}
 });
 renderHistory();
 document.getElementById("updateHistory").onclick=updateHistoryWithGenerated;
+document.getElementById("refreshSharedFiles").onclick=()=>loadSharedFiles().catch(error=>setStatus(error.message||String(error),"err"));
+loadSharedFiles().catch(console.warn);
 document.getElementById("exportHistory").onclick=exportHistoryJson;
 document.getElementById("syncAllHistory").onclick=syncAllLocalHistory;
 document.getElementById("importHistory").addEventListener("change",e=>{
@@ -1977,6 +2025,7 @@ document.getElementById("resetFilters").onclick=()=>{
 document.getElementById("clear").onclick=()=>{input.value="";currentFileCaches=[];currentFileCache=null;nameEl.textContent="Ningún fichero seleccionado";statusEl.className="status";statusEl.textContent="";};
 
 btn.onclick=async()=>{
+  const publicArchiveErrors=[];
   if(!currentFileCaches.length){setStatus("Selecciona primero uno o varios ficheros MERMAS.","err");return;}
   btn.disabled=true; setStatus("Procesando MERMAS y creando las hojas…","info");
   try{
@@ -2046,11 +2095,14 @@ btn.onclick=async()=>{
 
     const buffer=await out.xlsx.writeBuffer();
     await saveGeneratedWorkbook(buffer,file.name);
+    const generatedFile=new File([buffer],`TOP_GENERADO_${file.name.replace(/\.[^.]+$/,"")}.xlsx`,{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+    try{await uploadSharedFile(generatedFile);}catch(archiveError){publicArchiveErrors.push(`${generatedFile.name}: ${archiveError.message||archiveError}`);}
     await renderHistory();
     const url=URL.createObjectURL(new Blob([buffer],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
-    const a=document.createElement("a"); a.href=url; a.download=`TOP_GENERADO_${file.name.replace(/\.[^.]+$/,"")}.xlsx`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    const a=document.createElement("a"); a.href=url; a.download=generatedFile.name; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
     }
-    setStatus(`${currentFileCaches.length} TOP MERMAS generado(s) y descargado(s) correctamente.`,"ok");
+    if(publicArchiveErrors.length)setStatus(`${currentFileCaches.length} TOP MERMAS generado(s) y descargado(s), pero ${publicArchiveErrors.length} Excel no se pudo archivar públicamente.\n${publicArchiveErrors.join("\n")}`,"err");
+    else setStatus(`${currentFileCaches.length} TOP MERMAS generado(s), descargado(s) y archivado(s) públicamente.`,"ok");
   }catch(e){
     console.error(e); setStatus("No se pudo generar el TOP.\n\n"+(e.message||String(e)),"err");
   }finally{btn.disabled=false;}
