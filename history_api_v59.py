@@ -8,6 +8,7 @@ Puede añadirse a la aplicación Flask existente con:
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import os
 import threading
@@ -25,6 +26,9 @@ LOCAL_PATH = Path(os.getenv("TOP_MERMAS_HISTORY_FILE", "/tmp/top_mermas_v59_hist
 GITHUB_REPOSITORY = os.getenv("GITHUB_REPOSITORY") or os.getenv("GITHUB_REPO", "heyal2521/mermas-6.0")
 GITHUB_BRANCH = os.getenv("GITHUB_BRANCH", "main")
 GITHUB_PATH = os.getenv("GITHUB_HISTORY_PATH", "historico/TOP_MERMAS_CENTRAL_V59.json")
+GITHUB_ARCHIVE_BRANCH = os.getenv("GITHUB_ARCHIVE_BRANCH", "gh-pages")
+GITHUB_ARCHIVE_DIRECTORY = os.getenv("GITHUB_ARCHIVE_DIRECTORY", "historico/archivos")
+MAX_SHARED_FILE_BYTES = int(os.getenv("TOP_MERMAS_MAX_FILE_BYTES", str(15 * 1024 * 1024)))
 GITHUB_TOKEN = os.getenv("GITHUB_HISTORY_TOKEN") or os.getenv("GITHUB_TOKEN")
 ALLOWED_ORIGINS = {
     value.strip()
@@ -41,11 +45,11 @@ def _empty_payload() -> dict:
     return {"format": FORMAT, "version": 1, "updatedAt": None, "records": []}
 
 
-def _github_request(method: str, body: dict | None = None) -> dict:
-    quoted_path = urllib.parse.quote(GITHUB_PATH, safe="/")
+def _github_request(method: str, body: dict | None = None, path: str | None = None, branch: str | None = None) -> dict:
+    quoted_path = urllib.parse.quote(path or GITHUB_PATH, safe="/")
     url = f"https://api.github.com/repos/{GITHUB_REPOSITORY}/contents/{quoted_path}"
     if method == "GET":
-        url += "?ref=" + urllib.parse.quote(GITHUB_BRANCH)
+        url += "?ref=" + urllib.parse.quote(branch or GITHUB_BRANCH)
     data = json.dumps(body).encode("utf-8") if body is not None else None
     headers = {
         "Accept": "application/vnd.github+json",
@@ -203,6 +207,77 @@ def register_history_api(app: Flask) -> None:
         except Exception as exc:
             app.logger.exception("Error en histórico V59")
             return jsonify({"ok": False, "error": "No se pudo actualizar el histórico compartido."}), 500
+
+
+    @app.route("/api/v59/files", methods=["GET", "POST", "OPTIONS"])
+    def v59_files():
+        if request.method == "OPTIONS":
+            return ("", 204)
+        if not GITHUB_TOKEN:
+            return jsonify({"ok": False, "error": "El almacenamiento público no está configurado en el servidor."}), 503
+        try:
+            with LOCK:
+                payload, history_sha = _load()
+                files = payload.setdefault("files", [])
+                if request.method == "GET":
+                    files.sort(key=lambda item: item.get("uploadedAt", ""), reverse=True)
+                    return jsonify({"ok": True, "files": files, "total": len(files)})
+
+                uploaded = request.files.get("file")
+                if uploaded is None or not uploaded.filename:
+                    raise ValueError("Selecciona un fichero Excel.")
+                original_name = uploaded.filename.replace("\\", "/").split("/")[-1].strip()[:180]
+                extension = os.path.splitext(original_name)[1].lower()
+                if extension not in {".xlsx", ".xlsm", ".xls"}:
+                    raise ValueError("Solo se admiten ficheros .xlsx, .xlsm o .xls.")
+                data = uploaded.stream.read(MAX_SHARED_FILE_BYTES + 1)
+                if not data:
+                    raise ValueError("El fichero está vacío.")
+                if len(data) > MAX_SHARED_FILE_BYTES:
+                    raise ValueError(f"El fichero supera el límite de {MAX_SHARED_FILE_BYTES // (1024 * 1024)} MB.")
+                digest = hashlib.sha256(data).hexdigest()
+                stem = os.path.splitext(original_name)[0]
+                safe_stem = re.sub(r"[^A-Za-z0-9._-]+", "_", stem).strip("._-")[:90] or "fichero"
+                archive_name = f"{safe_stem}-{digest[:16]}{extension}"
+                archive_path = f"{GITHUB_ARCHIVE_DIRECTORY.rstrip('/')}/{archive_name}"
+                existing_sha = None
+                try:
+                    existing = _github_request("GET", path=archive_path, branch=GITHUB_ARCHIVE_BRANCH)
+                    existing_sha = existing.get("sha")
+                except urllib.error.HTTPError as exc:
+                    if exc.code != 404:
+                        raise
+                if existing_sha is None:
+                    body = {
+                        "message": f"Archivar Excel público: {original_name}",
+                        "content": base64.b64encode(data).decode("ascii"),
+                        "branch": GITHUB_ARCHIVE_BRANCH,
+                    }
+                    _github_request("PUT", body, path=archive_path)
+                public_url = (
+                    f"https://raw.githubusercontent.com/{GITHUB_REPOSITORY}/"
+                    f"{urllib.parse.quote(GITHUB_ARCHIVE_BRANCH, safe='')}/"
+                    f"{urllib.parse.quote(archive_path, safe='/')}"
+                )
+                entry = {
+                    "id": digest,
+                    "name": original_name,
+                    "size": len(data),
+                    "sha256": digest,
+                    "url": public_url,
+                    "uploadedAt": datetime.now(timezone.utc).isoformat(),
+                }
+                by_id = {item.get("id"): item for item in files}
+                by_id[digest] = entry
+                payload["files"] = list(by_id.values())
+                payload["updatedAt"] = datetime.now(timezone.utc).isoformat()
+                _save(payload, history_sha)
+                return jsonify({"ok": True, "file": entry, "total": len(payload["files"])})
+        except ValueError as exc:
+            return jsonify({"ok": False, "error": str(exc)}), 400
+        except Exception:
+            app.logger.exception("Error en archivos públicos V59")
+            return jsonify({"ok": False, "error": "No se pudo guardar el Excel en el archivo público."}), 500
 
 
 app = Flask(__name__)
