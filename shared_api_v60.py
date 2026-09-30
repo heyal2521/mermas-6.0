@@ -102,8 +102,11 @@ def register_shared_history_api(app):
             except Exception as e:
                 app.logger.exception("v60 history read"); return jsonify({"ok":False,"error":str(e)}),503
         if not WRITE_KEY: return jsonify({"ok":False,"error":"Codigo de escritura no configurado en Render."}),503
-        if request.headers.get("X-Top-Mermas-Key","").strip()!=WRITE_KEY: return jsonify({"ok":False,"error":"Codigo de equipo incorrecto."}),401
-        body=request.get_json(silent=True) or {}
+        body=request.get_json(silent=True)
+        if body is None:
+            try: body=json.loads(request.get_data(as_text=True) or "{}")
+            except Exception: body={}
+        if str(body.get("_writeKey") or request.headers.get("X-Top-Mermas-Key","")).strip()!=WRITE_KEY: return jsonify({"ok":False,"error":"Codigo de equipo incorrecto."}),401
         incoming=body.get("items") if isinstance(body.get("items"),list) else [body]
         if not incoming or len(incoming)>500: return jsonify({"ok":False,"error":"Lote no valido."}),400
         try:
