@@ -1217,8 +1217,12 @@ function setSharedStatus(text, ok=false){
   el.textContent=text; el.style.color=ok ? "#1f7a4d" : "#667085";
 }
 async function sharedApiFetch(url, options={}){
-  const headers={...(options.headers||{})}; const key=getSharedKey();
-  if(key) headers["X-Top-Mermas-Key"]=key;
+  const headers={...(options.headers||{})};
+  const method=String(options.method||"GET").toUpperCase();
+  const key=getSharedKey();
+  // La lectura del histórico es pública: no añadimos la cabecera de escritura
+  // a GET para evitar un preflight CORS innecesario.
+  if(method!=="GET" && method!=="HEAD" && key) headers["X-Top-Mermas-Key"]=key;
   const response=await fetch(url,{...options,headers});
   if(!response.ok){ let detail=""; try{detail=await response.text();}catch(e){} throw new Error(`Servidor histórico HTTP ${response.status}${detail?": "+detail.slice(0,200):""}`); }
   return response;
