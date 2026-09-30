@@ -1224,8 +1224,9 @@ async function sharedApiFetch(url, options={}){
   return response;
 }
 async function pushSharedHistoryItem(item){
-  const payload={name:item.name||"FICHERO.xlsx",size:Number(item.size||0),type:item.type||"application/octet-stream",kind:item.kind||"original",sourceName:item.sourceName||"",addedAt:item.addedAt||new Date().toISOString(),compositionIndex:item.compositionIndex||null,dataBase64:bytesToBase64(item.data)};
-  await sharedApiFetch(SHARED_API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const payload={_writeKey:getSharedKey(),name:item.name||"FICHERO.xlsx",size:Number(item.size||0),type:item.type||"application/octet-stream",kind:item.kind||"original",sourceName:item.sourceName||"",addedAt:item.addedAt||new Date().toISOString(),compositionIndex:item.compositionIndex||null,dataBase64:bytesToBase64(item.data)};
+  const response=await fetch(SHARED_API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify(payload)});
+  if(!response.ok){let detail="";try{detail=await response.text();}catch(e){}throw new Error(`Servidor histórico HTTP ${response.status}${detail?": "+detail.slice(0,200):""}`);}
 }
 async function pushSharedHistoryBulk(items){
   const payload={items:items.map(item=>({name:item.name||"FICHERO.xlsx",size:Number(item.size||0),type:item.type||"application/octet-stream",kind:item.kind||"original",sourceName:item.sourceName||"",addedAt:item.addedAt||new Date().toISOString(),compositionIndex:item.compositionIndex||null,dataBase64:bytesToBase64(item.data)}))};
