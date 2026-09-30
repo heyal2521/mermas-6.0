@@ -81,12 +81,21 @@ def register_shared_history_api(app):
             resp.headers["Vary"]="Origin"
             resp.headers["Access-Control-Allow-Headers"]="Content-Type, X-Top-Mermas-Key"
             resp.headers["Access-Control-Allow-Methods"]="GET, POST, OPTIONS"
+            resp.headers["Access-Control-Max-Age"]="600"
         return resp
 
     @app.route("/api/history",methods=["GET","POST","OPTIONS"])
     @app.route("/api/history/bulk",methods=["POST","OPTIONS"])
     def shared_history_v60():
-        if request.method=="OPTIONS": return ("",204)
+        if request.method=="OPTIONS":
+            resp=app.make_response(("",204))
+            origin=request.headers.get("Origin")
+            if origin in ALLOWED or origin=="null":
+                resp.headers["Access-Control-Allow-Origin"]=origin
+                resp.headers["Access-Control-Allow-Headers"]="Content-Type, X-Top-Mermas-Key"
+                resp.headers["Access-Control-Allow-Methods"]="GET, POST, OPTIONS"
+                resp.headers["Access-Control-Max-Age"]="600"
+            return resp
         if request.method=="GET":
             try:
                 p,_=load(); return jsonify(p)
