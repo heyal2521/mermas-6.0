@@ -9,7 +9,7 @@ BRANCH=os.getenv("GITHUB_BRANCH","main")
 PATH=os.getenv("TOP_MERMAS_SHARED_V60_PATH","historico/TOP_MERMAS_HISTORICO_SHARED_V60.json")
 TOKEN=(os.getenv("GITHUB_HISTORY_TOKEN") or os.getenv("GITHUB_TOKEN") or "").strip()
 WRITE_KEY=(os.getenv("TOP_MERMAS_WRITE_KEY") or os.getenv("SHARED_DASHBOARD_WRITE_KEY") or "").strip()
-ALLOWED={x.strip() for x in os.getenv("TOP_MERMAS_ALLOWED_ORIGINS","https://heyal2521.github.io,https://top-mermas.onrender.com").split(",") if x.strip()}
+ALLOWED={x.strip() for x in os.getenv("TOP_MERMAS_ALLOWED_ORIGINS","https://heyal2521.github.io,https://mermas-6-0.onrender.com,https://top-mermas.onrender.com").split(",") if x.strip()}
 LOCK=threading.Lock()
 MAX_BYTES=15*1024*1024
 
