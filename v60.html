@@ -1265,7 +1265,13 @@ async function syncLocalHistoryToCentral(){
   localStorage.setItem(SHARED_KEY_STORAGE,key);
   try{
     setSharedStatus("Sincronizando el histórico local con el central…");
-    const items=await getHistory(); await pushSharedHistoryBulk(items);
+    const items=await getHistory();
+    let synced=0;
+    for(const item of items){
+      setSharedStatus(`Sincronizando ${synced+1} de ${items.length}: ${item.name||"fichero"}…`);
+      await pushSharedHistoryItem(item);
+      synced++;
+    }
     const result=await loadCentralSharedHistory();
     if(result.ok) setSharedStatus(`Histórico central actualizado · ${result.total} ficheros disponibles para todos.`,true);
   }catch(e){setSharedStatus("No se pudo actualizar el histórico central: "+(e.message||String(e)));}
