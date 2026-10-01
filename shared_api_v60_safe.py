@@ -192,6 +192,11 @@ def upsert_item(raw):
 
     write_json_file(path, item, sha=sha)
 
+    # Verifica que GitHub devuelve el fichero íntegro antes de anunciarlo.
+    verified, _ = read_json_file(path)
+    if verified.get("sha256") != item["sha256"] or not verified.get("dataBase64"):
+        raise RuntimeError("La verificación del fichero guardado ha fallado.")
+
     manifest, manifest_sha = load_manifest()
     entries = manifest.setdefault("items", [])
     existing = {e.get("sha256"): e for e in entries}
