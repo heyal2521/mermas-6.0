@@ -62,8 +62,32 @@ def gh_contents(method, path, body=None, ref=None):
 
 def read_json_file(path, ref=None):
     result = gh_contents("GET", path, ref=ref or BRANCH)
-    raw = base64.b64decode(result["content"].replace("\n", ""))
-    return json.loads(raw.decode("utf-8")), result.get("sha")
+    content = str(result.get("content") or "").replace("\n", "")
+    if content:
+        try:
+            raw = base64.b64decode(content)
+            return json.loads(raw.decode("utf-8")), result.get("sha")
+        except (ValueError, json.JSONDecodeError, UnicodeDecodeError):
+            pass
+
+    # GitHub Contents puede omitir el contenido de archivos grandes.
+    # En ese caso usamos la versión RAW, que permite recuperarlos íntegros.
+    raw_url = (
+        "https://raw.githubusercontent.com/"
+        + REPO
+        + "/"
+        + urllib.parse.quote(ref or BRANCH, safe="")
+        + "/"
+        + urllib.parse.quote(path, safe="/")
+    )
+    req = urllib.request.Request(
+        raw_url,
+        headers={"User-Agent": "top-mermas-v60-safe"},
+        method="GET",
+    )
+    with urllib.request.urlopen(req, timeout=30) as response:
+        raw_text = response.read().decode("utf-8")
+    return json.loads(raw_text), result.get("sha")
 
 
 def write_json_file(path, payload, sha=None):
