@@ -100,7 +100,7 @@ button{border:0;border-radius:13px;padding:12px 18px;font-weight:800;cursor:poin
   <div class="dashboard-head">
     <div>
       <h2>Dashboard histórico</h2>
-      <p>Resumen de todos los MERMAS guardados en la memoria local del navegador.</p>
+      <p>Resumen del histórico central compartido. Los avisos y el contador de ficheros son iguales para todos los ordenadores.</p>
     </div>
     <button class="secondary" id="closeDashboard" type="button">Cerrar dashboard</button>
   </div>
@@ -743,7 +743,11 @@ async function analyzeHistory(){
     const k=`${fr.week}||${fr.cycle}||${fr.kind}`;
     if(!canonicalFiles.has(k)) canonicalFiles.set(k,fr);
   }
-  dashboardState.fileRecords=[...canonicalFiles.values()];
+  if(centralHistoryInventory.length){
+    dashboardState.fileRecords=centralHistoryInventory.slice();
+  }else{
+    dashboardState.fileRecords=[...canonicalFiles.values()];
+  }
 
   populateDashboardFilters();
   applyDashboardFilters();
@@ -1320,6 +1324,23 @@ const SHARED_HISTORY_URL = "./TOP_MERMAS_HISTORICO_2026-08-26T16-56-34.json";
 // v60: fuente central del histórico compartido.
 const SHARED_API_URL = "https://mermas-6-0.onrender.com/api/history";
 const SHARED_KEY_STORAGE = "top_mermas_shared_key";
+let centralHistoryInventory=[];
+
+function rebuildCentralInventory(items){
+  const canonical=new Map();
+  for(const item of (items||[])){
+    const p=historyItemPeriod(item);
+    if(!p) continue;
+    const kind=historyItemKind(item);
+    const key=`${p.week}||${p.cycle}||${kind}`;
+    if(!canonical.has(key)){
+      canonical.set(key,{week:p.week,cycle:p.cycle,kind,name:item.name||"",sourceName:item.sourceName||""});
+    }
+  }
+  centralHistoryInventory=[...canonical.values()];
+  dashboardState.fileRecords=centralHistoryInventory.slice();
+}
+
 
 function getSharedKey(){
   return String(document.getElementById("sharedKey")?.value || localStorage.getItem(SHARED_KEY_STORAGE) || "").trim();
@@ -1370,6 +1391,7 @@ async function importCentralHistoryToLocal(payload){
 async function loadCentralSharedHistory(){
   try{
     const response=await sharedApiFetch(SHARED_API_URL,{cache:"no-store"}),payload=await response.json();
+    rebuildCentralInventory(payload.items);
     const added=await importCentralHistoryToLocal(payload);
     setSharedStatus(`Conectado · ${payload.items.length} ficheros en el histórico central · ${added} nuevos descargados en este equipo.`,true);
     if(!document.getElementById("dashboardPanel").hidden) { await analyzeHistory(); await updateFileAlerts(); }
