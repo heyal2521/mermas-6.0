@@ -714,10 +714,31 @@ async function analyzeHistory(){
   dashboardState.skippedFiles=skipped;
   dashboardState.originalFileCount=originalItems.length;
   dashboardState.generatedFileCount=generatedItems.length;
-  dashboardState.fileRecords=items.map(item=>{
+  const manifest=[];
+  const manifestKeys=new Set();
+  for(const item of items){
     const p=historyItemPeriod(item);
-    return p ? {week:p.week,cycle:p.cycle,kind:historyItemKind(item),name:item.name||"",id:item.id} : null;
-  }).filter(Boolean);
+    if(!p) continue;
+    const rec={week:p.week,cycle:p.cycle,kind:historyItemKind(item),name:item.name||"",id:item.id};
+    const key=`${rec.week}||${rec.cycle}||${rec.kind}||${rec.name}`;
+    if(!manifestKeys.has(key)){manifestKeys.add(key);manifest.push(rec);}
+  }
+  // Si un TOP_GENERADO está representado en el snapshot histórico pero todavía
+  // no se ha descargado en este navegador, lo conocemos como fichero generado.
+  const snapshotFiles=new Map();
+  for(const r of (sharedDashboardSnapshot?.rows||[])){
+    if(r.kind!=="generated" || !r.file || !r.week || !r.cycle) continue;
+    const key=`${r.week}||${r.cycle}`;
+    if(!snapshotFiles.has(key)) snapshotFiles.set(key,r.file);
+  }
+  for(const [key,name] of snapshotFiles){
+    const [week,cycle]=key.split("||");
+    const exists=manifest.some(r=>String(r.week)===String(week)&&String(r.cycle)===String(cycle)&&r.kind==="generated");
+    if(!exists){
+      manifest.push({week:Number(week),cycle:Number(cycle),kind:"generated",name:String(name),id:"snapshot:"+name});
+    }
+  }
+  dashboardState.fileRecords=manifest;
 
   populateDashboardFilters();
   applyDashboardFilters();
@@ -755,6 +776,16 @@ function historyItemPeriod(item){
   for(const name of candidates){
     const p=semCiclo(String(name));
     if(p.sem && p.cic) return {week:Number(p.sem),cycle:Number(p.cic)};
+  }
+  // Fallback robusto para TOP_GENERADO: el compositionIndex guarda
+  // SEM/CICLO de las CHECKLIST aunque el nombre no los permita detectar.
+  const idx=Array.isArray(item?.compositionIndex) ? item.compositionIndex : [];
+  for(const rec of idx){
+    const week=String(rec?.week||"").trim();
+    const cycle=String(rec?.cycle||"").trim();
+    if(/^\d{1,2}$/.test(week) && /^\d{1,2}$/.test(cycle)){
+      return {week:Number(week),cycle:Number(cycle)};
+    }
   }
   return null;
 }
