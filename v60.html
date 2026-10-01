@@ -781,20 +781,23 @@ function getPeriodFromHistoryItem(item){
 }
 
 function historyItemPeriod(item){
-  const candidates=[item?.sourceName,item?.name].filter(Boolean);
+  // Para TOP_GENERADO manda primero el periodo interno de las CHECKLIST.
+  // El nombre/sourceName puede ser el del MERMAS de origen y no siempre
+  // representa correctamente el ciclo del fichero generado.
+  if(historyItemKind(item)==="generated"){
+    const idx=Array.isArray(item?.compositionIndex) ? item.compositionIndex : [];
+    for(const rec of idx){
+      const week=String(rec?.week||"").trim();
+      const cycle=String(rec?.cycle||"").trim();
+      if(/^\d{1,2}$/.test(week) && /^\d{1,2}$/.test(cycle)){
+        return {week:Number(week),cycle:Number(cycle)};
+      }
+    }
+  }
+  const candidates=[item?.name,item?.sourceName].filter(Boolean);
   for(const name of candidates){
     const p=semCiclo(String(name));
     if(p.sem && p.cic) return {week:Number(p.sem),cycle:Number(p.cic)};
-  }
-  // Fallback robusto para TOP_GENERADO: el compositionIndex guarda
-  // SEM/CICLO de las CHECKLIST aunque el nombre no los permita detectar.
-  const idx=Array.isArray(item?.compositionIndex) ? item.compositionIndex : [];
-  for(const rec of idx){
-    const week=String(rec?.week||"").trim();
-    const cycle=String(rec?.cycle||"").trim();
-    if(/^\d{1,2}$/.test(week) && /^\d{1,2}$/.test(cycle)){
-      return {week:Number(week),cycle:Number(cycle)};
-    }
   }
   return null;
 }
