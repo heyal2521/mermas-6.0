@@ -189,6 +189,16 @@ def upsert_item(raw):
         if exc.code != 404:
             raise
         sha = None
+    except (json.JSONDecodeError, UnicodeDecodeError, ValueError):
+        # Puede existir una versión anterior vacía/corrupta. Conservamos su SHA
+        # para poder sobrescribirla con el TOP_GENERADO válido.
+        try:
+            raw_meta = gh_contents("GET", path, ref=BRANCH)
+            sha = raw_meta.get("sha")
+        except urllib.error.HTTPError as exc:
+            if exc.code != 404:
+                raise
+            sha = None
 
     write_json_file(path, item, sha=sha)
 
