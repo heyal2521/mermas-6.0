@@ -1408,9 +1408,24 @@ async function loadSharedHistory(){
 
 async function openDashboard(){
   const panel=document.getElementById("dashboardPanel");
-  panel.hidden=false; setStatus("Analizando el histórico local…","info");
-  try{await analyzeHistory();await updateFileAlerts();panel.scrollIntoView({behavior:"smooth",block:"start"});setStatus("Dashboard actualizado.","ok");}
-  catch(e){setStatus("No se pudo analizar el histórico.\\n\\n"+(e.message||String(e)),"err");}
+  panel.hidden=false; setStatus("Sincronizando histórico compartido…","info");
+  try{
+    const central=await loadCentralSharedHistory();
+    if(!central.ok) throw central.error||new Error("No se pudo leer el histórico central.");
+    await analyzeHistory();
+    await updateFileAlerts();
+    panel.scrollIntoView({behavior:"smooth",block:"start"});
+    setStatus("Dashboard actualizado con el histórico compartido.","ok");
+  }catch(e){
+    try{
+      await analyzeHistory();
+      await updateFileAlerts();
+      panel.scrollIntoView({behavior:"smooth",block:"start"});
+      setStatus("Dashboard actualizado con el histórico local. No se pudo consultar el histórico central.","info");
+    }catch(inner){
+      setStatus("No se pudo analizar el histórico.\n\n"+(inner.message||e.message||String(inner)),"err");
+    }
+  }
 }
 function semCiclo(name){
   const rawName=String(name||"");
@@ -1873,8 +1888,10 @@ document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeModelDetail()
 (async()=>{
   await renderHistory();
   await loadSharedDashboardSnapshot();
-  if(getSharedKey()) await loadCentralSharedHistory();
-  else await loadSharedHistory();
+  // El histórico central es la fuente de verdad del dashboard.
+  // La lectura es pública y no requiere el código de escritura.
+  const centralInit=await loadCentralSharedHistory();
+  if(!centralInit.ok) await loadSharedHistory();
 })();
 </script>
 
