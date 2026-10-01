@@ -1,0 +1,4 @@
+from app import app
+from shared_api_v60_safe import register_shared_history_api_safe
+
+register_shared_history_api_safe(app)
