@@ -197,7 +197,7 @@ function raw(v){ return v && typeof v==="object" && "result" in v ? v.result : v
 function clone(v){ return v==null ? v : JSON.parse(JSON.stringify(v)); }
 
 
-const dashboardState={rows:[],filtered:[]};
+const dashboardState={rows:[],filtered:[],fileRecords:[]};
 const EMBEDDED_SHARED_DASHBOARD_SNAPSHOT = {"format":"TOP_MERMAS_DASHBOARD_SHARED","version":1,"exportedAt":"2026-09-09T23:49:05.190Z","rows":[{"mc":"3046/334","family":"CAZADORA","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"4387/268","family":"CAMISA","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"8372/241","family":"CAZADORA","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"8372/242","family":"PANTALON","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"8372/248","family":"PANTALON","week":"36","cycle":"1","kind":"generated","file":"TOP_GENERADO SEMANA 36 C1.xlsx","id":"TOP_GENERADO SEMANA 36 C1.xlsx"},{"mc":"3046/331","family":"ABRIGO","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"3293/276","family":"PANTALON","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"4387/493","family":"PANTALON","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"8372/242","family":"PANTALON","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"8741/252","family":"CAMISA","week":"36","cycle":"2","kind":"generated","file":"TOP_GENERADO SEMANA 36 C2.xlsx","id":"TOP_GENERADO SEMANA 36 C2.xlsx"},{"mc":"2753/229","family":"PANTALON","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"3046/234","family":"ANORAK","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"3046/334","family":"CAZADORA","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"4387/493","family":"PANTALON","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"},{"mc":"5644/732","family":"TOPS Y OTRAS P.","week":"37","cycle":"1","kind":"generated","file":"TOP_GENERADO semama 37 c1.xlsx","id":"TOP_GENERADO semama 37 c1.xlsx"}],"sourceIndex":{},"compositionIndex":{"3046/334||37||1":[{"row":6,"label":"POLIESTER","percentage":"1"}],"3046/234||37||1":[{"row":6,"label":"POLIESTER","percentage":"1"}],"4387/493||37||1":[{"row":3,"label":"VISCOSA","percentage":"0.3"},{"row":6,"label":"POLIESTER","percentage":"0.66"},{"row":10,"label":"ELASTANO","percentage":"0.04"}],"5644/732||37||1":[{"row":8,"label":"LYOCELL","percentage":"0.95"},{"row":10,"label":"ELASTANO","percentage":"0.05"}],"2753/229||37||1":[{"row":3,"label":"VISCOSA","percentage":"0.29"},{"row":6,"label":"POLIESTER","percentage":"0.69"},{"row":10,"label":"ELASTANO","percentage":"0.02"}],"3046/331||36||2":[],"8741/252||36||2":[],"4387/493||36||2":[],"8372/242||36||2":[],"3293/276||36||2":[],"8372/242||36||1":[{"row":6,"label":"POLIESTER","percentage":"97%"},{"row":10,"label":"ELASTANO","percentage":"3%"}],"8372/241||36||1":[{"row":6,"label":"POLIESTER","percentage":"97%"},{"row":10,"label":"ELASTANO","percentage":"3%"}],"3046/334||36||1":[{"row":6,"label":"POLIESTER","percentage":"100%"}],"4387/268||36||1":[{"row":6,"label":"POLIESTER","percentage":"100%"}],"8372/248||36||1":[{"row":5,"label":"ALGODÓN","percentage":"32%"},{"row":6,"label":"POLIESTER","percentage":"63%"},{"row":10,"label":"ELASTANO","percentage":"5%"}]}};
 let sharedDashboardSnapshot=EMBEDDED_SHARED_DASHBOARD_SNAPSHOT;
 const SHARED_DASHBOARD_URL="./TOP_MERMAS_DASHBOARD_SHARED.json";
@@ -714,6 +714,10 @@ async function analyzeHistory(){
   dashboardState.skippedFiles=skipped;
   dashboardState.originalFileCount=originalItems.length;
   dashboardState.generatedFileCount=generatedItems.length;
+  dashboardState.fileRecords=items.map(item=>{
+    const p=historyItemPeriod(item);
+    return p ? {week:p.week,cycle:p.cycle,kind:historyItemKind(item),name:item.name||"",id:item.id} : null;
+  }).filter(Boolean);
 
   populateDashboardFilters();
   applyDashboardFilters();
@@ -746,6 +750,20 @@ function getPeriodFromHistoryItem(item){
   return null;
 }
 
+function historyItemPeriod(item){
+  const candidates=[item?.sourceName,item?.name].filter(Boolean);
+  for(const name of candidates){
+    const p=semCiclo(String(name));
+    if(p.sem && p.cic) return {week:Number(p.sem),cycle:Number(p.cic)};
+  }
+  return null;
+}
+
+function historyItemKind(item){
+  return item?.kind==="generated" || /TOP_GENERADO/i.test(String(item?.name||"")) || /TOP_GENERADO/i.test(String(item?.sourceName||""))
+    ? "generated" : "original";
+}
+
 async function updateFileAlerts(){
   const box=document.getElementById("fileAlerts");
   if(!box) return;
@@ -753,13 +771,13 @@ async function updateFileAlerts(){
     const items=await getHistory();
     const periods=new Map();
     for(const item of items){
-      const p=getPeriodFromHistoryItem(item);
+      const p=historyItemPeriod(item);
       if(!p || p.week<36) continue;
       const key=`${p.week}||${p.cycle}`;
       if(!periods.has(key)) periods.set(key,{week:p.week,cycle:p.cycle,original:false,generated:false});
       const x=periods.get(key);
-      if(item.kind==="generated" || /TOP_GENERADO/i.test(String(item.name||"")) || /TOP_GENERADO/i.test(String(item.sourceName||""))) x.generated=true;
-      else x.original=true;
+      const kind=historyItemKind(item);
+      if(kind==="generated") x.generated=true; else x.original=true;
     }
     const missingOriginal=[...periods.values()].filter(x=>x.generated&&!x.original).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
     const missingGenerated=[...periods.values()].filter(x=>x.original&&!x.generated).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
@@ -769,13 +787,14 @@ async function updateFileAlerts(){
       return `<div class="file-alert ${kind}"><h3>${title}</h3><div class="count">${items.length}</div><p>${desc}</p><ul>${list}</ul></div>`;
     };
     box.innerHTML=
-      renderAlert("Ficheros TOP MERMAS que faltan",missingOriginal,"warn","Hay TOP_GENERADO para estos ciclos, pero no consta el MERMAS original en el histórico central.")+
-      renderAlert("Ficheros TOP GENERADO que faltan",missingGenerated,"warn","Hay MERMAS original para estos ciclos, pero no consta el TOP_GENERADO en el histórico central.");
+      renderAlert("Ficheros TOP MERMAS que faltan",missingOriginal,"warn","Ciclos desde SEM 36 con TOP_GENERADO pero sin MERMAS original.")+
+      renderAlert("Ficheros TOP GENERADO que faltan",missingGenerated,"warn","Ciclos desde SEM 36 con MERMAS original pero sin TOP_GENERADO.");
   }catch(e){
     box.innerHTML="";
     console.warn("No se pudieron calcular los avisos de ficheros:",e);
   }
 }
+
 
 function populateDashboardFilters(){
   const fill=(id,values,all)=>{const el=document.getElementById(id); el.innerHTML=`<option value="">${all}</option>`+values.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");};
@@ -843,19 +862,16 @@ function renderDashboard(){
   const selectedFamily=document.getElementById("filterFamily").value;
   const lastAppearance=document.getElementById("filterLastAppearance").value;
 
-  // Ficheros que realmente están representados por las filas filtradas.
-  const files=new Set();
-  rows.forEach(r=>{
-    if(r.sourceIds instanceof Set){
-      r.sourceIds.forEach(id=>files.add(String(id)));
-    }else if(r.kind==="original" && r.id){
-      files.add(String(r.id));
-    }else if(r.kind!=="original" && r.file){
-      // Para semanas nuevas que todavía no están en el índice de MERMAS
-      // originales, contamos el fichero compartido que aporta el dato.
-      files.add(String(r.file));
-    }
-  });
+  // KPI "Ficheros" = ficheros fisicos del historico para los
+  // periodos seleccionados. Cada SEMANA + CICLO puede aportar:
+  // 1 MERMAS original + 1 TOP_GENERADO.
+  const weekStateForFiles=getSelectedWeeks();
+  const selectedCycleForFiles=document.getElementById("filterCycle").value;
+  const fileScope=dashboardState.fileRecords.filter(fr=>
+    (weekStateForFiles.allSelected || weekStateForFiles.selected.length===0 || weekStateForFiles.selected.includes(String(fr.week))) &&
+    (!selectedCycleForFiles || String(fr.cycle)===String(selectedCycleForFiles))
+  );
+  const files=new Set(fileScope.map(fr=>String(fr.id ?? fr.name+"||"+fr.week+"||"+fr.cycle+"||"+fr.kind)));
 
   const cycles=new Set(rows.map(r=>r.label));
   const mcs=new Set(rows.map(r=>r.mc));
