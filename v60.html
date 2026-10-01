@@ -86,9 +86,9 @@ button{border:0;border-radius:13px;padding:12px 18px;font-weight:800;cursor:poin
 <div class="update-top-card">
   <div>
     <h3>Actualizar histórico con TOP generado</h3>
-    <p class="note">Selecciona el TOP_GENERADO que hayas rellenado manualmente para actualizar el histórico local.</p>
+    <p class="note">Selecciona uno o varios TOP_GENERADO que hayas rellenado manualmente para actualizar el histórico local y compartido.</p>
   </div>
-  <input id="updatedTopFile" type="file" accept=".xlsx,.xlsm,.xls">
+  <input id="updatedTopFile" type="file" accept=".xlsx,.xlsm,.xls" multiple>
   <button class="secondary" id="updateHistory" type="button">Actualizar histórico</button>
 </div>
 <div id="status" class="status"></div>
@@ -1153,51 +1153,60 @@ function closeModelDetail(){
 
 async function updateHistoryWithGenerated(){
   const input=document.getElementById("updatedTopFile");
-  const file=input.files && input.files[0];
+  const files=[...(input.files||[])];
 
-  if(!file){
-    setStatus("Selecciona primero el TOP_GENERADO.xlsx que hayas rellenado.","err");
+  if(!files.length){
+    setStatus("Selecciona uno o varios TOP_GENERADO.xlsx que hayas rellenado.","err");
     return;
   }
 
   try{
-    setStatus("Actualizando el histórico con el TOP generado…","info");
+    let done=0;
+    const total=files.length;
 
-    const wb=new ExcelJS.Workbook();
-    await wb.xlsx.load(await file.arrayBuffer());
+    for(const file of files){
+      setStatus(`Actualizando TOP_GENERADO ${done+1} de ${total}: ${file.name}…`,"info");
 
-    const checklistSheets=wb.worksheets.filter(ws=>isChecklistSheet(ws));
-    if(!checklistSheets.length){
-      throw new Error("El fichero seleccionado no contiene hojas CHECKLIST reconocibles.");
+      const wb=new ExcelJS.Workbook();
+      await wb.xlsx.load(await file.arrayBuffer());
+
+      const checklistSheets=wb.worksheets.filter(ws=>isChecklistSheet(ws));
+      if(!checklistSheets.length){
+        throw new Error(`El fichero ${file.name} no contiene hojas CHECKLIST reconocibles.`);
+      }
+
+      await replaceGeneratedHistory(file);
+
+      if(getSharedKey()){
+        const parsedShared=await extractCompositionIndexFromWorkbook(file);
+        await pushSharedHistoryItem({
+          name:file.name,
+          size:file.size,
+          type:file.type,
+          kind:"generated",
+          sourceName:inferOriginalNameFromGenerated(file.name)||file.name,
+          addedAt:new Date().toISOString(),
+          compositionIndex:parsedShared.index,
+          data:parsedShared.data
+        });
+      }
+
+      done++;
     }
 
-    await replaceGeneratedHistory(file);
-    if(getSharedKey()){
-      const parsedShared=await extractCompositionIndexFromWorkbook(file);
-      await pushSharedHistoryItem({
-        name:file.name,
-        size:file.size,
-        type:file.type,
-        kind:"generated",
-        sourceName:inferOriginalNameFromGenerated(file.name)||file.name,
-        addedAt:new Date().toISOString(),
-        compositionIndex:parsedShared.index,
-        data:parsedShared.data
-      });
-    }
     await renderHistory();
 
     const panel=document.getElementById("dashboardPanel");
     if(!panel.hidden){
       await analyzeHistory();
+      await updateFileAlerts();
     }
 
-    setStatus(`Histórico actualizado correctamente con ${file.name}.`,"ok");
+    setStatus(`Histórico actualizado correctamente con ${done} TOP_GENERADO.`,"ok");
   }catch(e){
     setStatus("No se pudo actualizar el histórico.\n\n"+(e.message||String(e)),"err");
   }
 }
-
 
 function bytesToBase64(buffer){
   const bytes=new Uint8Array(buffer);
