@@ -1148,6 +1148,19 @@ async function updateHistoryWithGenerated(){
     }
 
     await replaceGeneratedHistory(file);
+    if(getSharedKey()){
+      const parsedShared=await extractCompositionIndexFromWorkbook(file);
+      await pushSharedHistoryItem({
+        name:file.name,
+        size:file.size,
+        type:file.type,
+        kind:"generated",
+        sourceName:inferOriginalNameFromGenerated(file.name)||file.name,
+        addedAt:new Date().toISOString(),
+        compositionIndex:parsedShared.index,
+        data:parsedShared.data
+      });
+    }
     await renderHistory();
 
     const panel=document.getElementById("dashboardPanel");
