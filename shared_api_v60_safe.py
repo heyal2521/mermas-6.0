@@ -189,9 +189,10 @@ def upsert_item(raw):
         if exc.code != 404:
             raise
         sha = None
-    except (json.JSONDecodeError, UnicodeDecodeError, ValueError):
-        # Puede existir una versión anterior vacía/corrupta. Conservamos su SHA
-        # para poder sobrescribirla con el TOP_GENERADO válido.
+    except Exception as read_exc:
+        # Si el objeto ya existe pero su contenido está vacío/corrupto,
+        # necesitamos únicamente su SHA para sobrescribirlo. La API Contents
+        # devuelve ese SHA aunque el contenido no sea JSON válido.
         try:
             raw_meta = gh_contents("GET", path, ref=BRANCH)
             sha = raw_meta.get("sha")
