@@ -738,7 +738,12 @@ async function analyzeHistory(){
       manifest.push({week:Number(week),cycle:Number(cycle),kind:"generated",name:String(name),id:"snapshot:"+name});
     }
   }
-  dashboardState.fileRecords=manifest;
+  const canonicalFiles=new Map();
+  for(const fr of manifest){
+    const k=`${fr.week}||${fr.cycle}||${fr.kind}`;
+    if(!canonicalFiles.has(k)) canonicalFiles.set(k,fr);
+  }
+  dashboardState.fileRecords=[...canonicalFiles.values()];
 
   populateDashboardFilters();
   applyDashboardFilters();
@@ -798,34 +803,22 @@ function historyItemKind(item){
 async function updateFileAlerts(){
   const box=document.getElementById("fileAlerts");
   if(!box) return;
-  try{
-    const items=await getHistory();
-    const periods=new Map();
-    for(const item of items){
-      const p=historyItemPeriod(item);
-      if(!p || p.week<36) continue;
-      const key=`${p.week}||${p.cycle}`;
-      if(!periods.has(key)) periods.set(key,{week:p.week,cycle:p.cycle,original:false,generated:false});
-      const x=periods.get(key);
-      const kind=historyItemKind(item);
-      if(kind==="generated") x.generated=true; else x.original=true;
-    }
-    const missingOriginal=[...periods.values()].filter(x=>x.generated&&!x.original).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
-    const missingGenerated=[...periods.values()].filter(x=>x.original&&!x.generated).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
-    const renderAlert=(title,items,kind,desc)=>{
-      if(!items.length) return `<div class="file-alert ok"><h3>${title}</h3><div class="count">0</div><p>${desc}</p><p style="margin-top:7px;font-weight:800">Todo correcto desde SEM 36.</p></div>`;
-      const list=items.map(x=>`<li>SEM ${x.week} C${x.cycle}</li>`).join("");
-      return `<div class="file-alert ${kind}"><h3>${title}</h3><div class="count">${items.length}</div><p>${desc}</p><ul>${list}</ul></div>`;
-    };
-    box.innerHTML=
-      renderAlert("Ficheros TOP MERMAS que faltan",missingOriginal,"warn","Ciclos desde SEM 36 con TOP_GENERADO pero sin MERMAS original.")+
-      renderAlert("Ficheros TOP GENERADO que faltan",missingGenerated,"warn","Ciclos desde SEM 36 con MERMAS original pero sin TOP_GENERADO.");
-  }catch(e){
-    box.innerHTML="";
-    console.warn("No se pudieron calcular los avisos de ficheros:",e);
+  const periods=new Map();
+  for(const fr of (dashboardState.fileRecords||[])){
+    const week=Number(fr.week),cycle=Number(fr.cycle);
+    if(!week||!cycle||week<36) continue;
+    const key=`${week}||${cycle}`;
+    if(!periods.has(key)) periods.set(key,{week,cycle,original:false,generated:false});
+    periods.get(key)[fr.kind==="generated"?"generated":"original"]=true;
   }
+  const missM=[...periods.values()].filter(x=>x.generated&&!x.original).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
+  const missG=[...periods.values()].filter(x=>x.original&&!x.generated).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
+  const card=(title,list,desc)=>list.length
+    ? `<div class="file-alert warn"><h3>${title}</h3><div class="count">${list.length}</div><p>${desc}</p><ul>${list.map(x=>`<li>SEM ${x.week} C${x.cycle}</li>`).join("")}</ul></div>`
+    : `<div class="file-alert ok"><h3>${title}</h3><div class="count">0</div><p>Todo correcto desde SEM 36.</p></div>`;
+  box.innerHTML=card("Ficheros TOP MERMAS que faltan",missM,"Existe TOP_GENERADO pero falta el MERMAS original.")+
+                card("Ficheros TOP GENERADO que faltan",missG,"Existe MERMAS original pero falta el TOP_GENERADO.");
 }
-
 
 function populateDashboardFilters(){
   const fill=(id,values,all)=>{const el=document.getElementById(id); el.innerHTML=`<option value="">${all}</option>`+values.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");};
@@ -902,7 +895,7 @@ function renderDashboard(){
     (weekStateForFiles.allSelected || weekStateForFiles.selected.length===0 || weekStateForFiles.selected.includes(String(fr.week))) &&
     (!selectedCycleForFiles || String(fr.cycle)===String(selectedCycleForFiles))
   );
-  const files=new Set(fileScope.map(fr=>String(fr.id ?? fr.name+"||"+fr.week+"||"+fr.cycle+"||"+fr.kind)));
+  const files=new Set(fileScope.map(fr=>`${fr.week}||${fr.cycle}||${fr.kind}`));
 
   const cycles=new Set(rows.map(r=>r.label));
   const mcs=new Set(rows.map(r=>r.mc));
