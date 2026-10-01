@@ -18,6 +18,13 @@ button{border:0;border-radius:13px;padding:12px 18px;font-weight:800;cursor:poin
 .note{margin-top:16px;color:#667085;font-size:12px;line-height:1.5}
 
 .history{margin-top:14px}.history-empty{color:#667085;font-size:12px}.history-saved{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:#edf8f1;color:#1f7a4d;font-size:12px;font-weight:700}
+.file-alerts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.file-alert{border:1px solid #dbe3ef;border-radius:16px;padding:14px 15px;background:#fbfdff}
+.file-alert h3{margin:0 0 6px;font-size:15px}.file-alert p{margin:0;color:#667085;font-size:11px;line-height:1.45}
+.file-alert.ok{background:#edf8f1;border-color:#b8e0c7;color:#1f7a4d}
+.file-alert.warn{background:#fff8eb;border-color:#f2d39b;color:#8a5b00}
+.file-alert .count{font-size:21px;font-weight:800;margin:2px 0 5px}.file-alert ul{margin:8px 0 0;padding-left:18px;font-size:11px;line-height:1.5}
+@media(max-width:900px){.file-alerts{grid-template-columns:1fr}}
 .dashboard-panel{margin-top:20px;background:#fff;border:1px solid #dbe3ef;border-radius:22px;padding:22px;box-shadow:0 12px 28px rgba(18,32,51,.07);width:100%;min-width:0}
 .dashboard-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.dashboard-head h2{margin:0}.dashboard-head p{margin:6px 0 0;color:#667085;font-size:13px}
 .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0}.multi-select{min-height:88px;padding:8px 10px;line-height:1.5}.week-filter-wrap{display:flex;flex-direction:column;gap:8px}.week-quick-actions{display:flex;flex-wrap:wrap;gap:6px}.week-quick-actions button{padding:8px 11px;font-size:11px}.filter-helper{grid-column:1/-1;font-size:11px;color:#667085;margin-top:-3px}.filters select,.filters input{width:100%;min-width:0;padding:10px 11px;border:1px solid #cfd9e6;border-radius:10px;background:#fff;color:#122033}.filters #filterMc{grid-column:1/-1}.filters #resetFilters{justify-self:start}
@@ -99,6 +106,8 @@ button{border:0;border-radius:13px;padding:12px 18px;font-weight:800;cursor:poin
   </div>
 
   <div id="dashStatus" class="status"></div>
+
+  <div id="fileAlerts" class="file-alerts" aria-live="polite" aria-atomic="true"></div>
 
   <div class="filters">
     <div class="week-filter-wrap">
@@ -728,6 +737,46 @@ function sortCycleLabels(list){
   });
 }
 
+function getPeriodFromHistoryItem(item){
+  const candidates=[item?.name,item?.sourceName].filter(Boolean);
+  for(const name of candidates){
+    const p=semCiclo(String(name));
+    if(p.sem && p.cic) return {week:Number(p.sem),cycle:Number(p.cic)};
+  }
+  return null;
+}
+
+async function updateFileAlerts(){
+  const box=document.getElementById("fileAlerts");
+  if(!box) return;
+  try{
+    const items=await getHistory();
+    const periods=new Map();
+    for(const item of items){
+      const p=getPeriodFromHistoryItem(item);
+      if(!p || p.week<36) continue;
+      const key=`${p.week}||${p.cycle}`;
+      if(!periods.has(key)) periods.set(key,{week:p.week,cycle:p.cycle,original:false,generated:false});
+      const x=periods.get(key);
+      if(item.kind==="generated" || /TOP_GENERADO/i.test(String(item.name||"")) || /TOP_GENERADO/i.test(String(item.sourceName||""))) x.generated=true;
+      else x.original=true;
+    }
+    const missingOriginal=[...periods.values()].filter(x=>x.generated&&!x.original).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
+    const missingGenerated=[...periods.values()].filter(x=>x.original&&!x.generated).sort((a,b)=>a.week-b.week||a.cycle-b.cycle);
+    const renderAlert=(title,items,kind,desc)=>{
+      if(!items.length) return `<div class="file-alert ok"><h3>${title}</h3><div class="count">0</div><p>${desc}</p><p style="margin-top:7px;font-weight:800">Todo correcto desde SEM 36.</p></div>`;
+      const list=items.map(x=>`<li>SEM ${x.week} C${x.cycle}</li>`).join("");
+      return `<div class="file-alert ${kind}"><h3>${title}</h3><div class="count">${items.length}</div><p>${desc}</p><ul>${list}</ul></div>`;
+    };
+    box.innerHTML=
+      renderAlert("Ficheros TOP MERMAS que faltan",missingOriginal,"warn","Hay TOP_GENERADO para estos ciclos, pero no consta el MERMAS original en el histórico central.")+
+      renderAlert("Ficheros TOP GENERADO que faltan",missingGenerated,"warn","Hay MERMAS original para estos ciclos, pero no consta el TOP_GENERADO en el histórico central.");
+  }catch(e){
+    box.innerHTML="";
+    console.warn("No se pudieron calcular los avisos de ficheros:",e);
+  }
+}
+
 function populateDashboardFilters(){
   const fill=(id,values,all)=>{const el=document.getElementById(id); el.innerHTML=`<option value="">${all}</option>`+values.map(v=>`<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");};
   const weekEl=document.getElementById("filterWeek");
@@ -784,6 +833,7 @@ function applyDashboardFilters(){
       (!q||r.mc.toLowerCase().includes(q));
   });
   renderDashboard();
+  updateFileAlerts();
 }
 function renderDashboard(){
   const rows=dashboardState.filtered;
@@ -1260,7 +1310,7 @@ async function loadCentralSharedHistory(){
     const response=await sharedApiFetch(SHARED_API_URL,{cache:"no-store"}),payload=await response.json();
     const added=await importCentralHistoryToLocal(payload);
     setSharedStatus(`Conectado · ${payload.items.length} ficheros en el histórico central · ${added} nuevos descargados en este equipo.`,true);
-    if(!document.getElementById("dashboardPanel").hidden) await analyzeHistory();
+    if(!document.getElementById("dashboardPanel").hidden) { await analyzeHistory(); await updateFileAlerts(); }
     return {ok:true,added,total:payload.items.length};
   }catch(e){ setSharedStatus("No se pudo sincronizar el histórico central: "+(e.message||String(e))); return {ok:false,error:e}; }
 }
@@ -1278,7 +1328,7 @@ async function syncLocalHistoryToCentral(){
       synced++;
     }
     const result=await loadCentralSharedHistory();
-    if(result.ok) setSharedStatus(`Histórico central actualizado · ${result.total} ficheros disponibles para todos.`,true);
+    if(result.ok){ setSharedStatus(`Histórico central actualizado · ${result.total} ficheros disponibles para todos.`,true); await updateFileAlerts(); }
   }catch(e){setSharedStatus("No se pudo actualizar el histórico central: "+(e.message||String(e)));}
 }
 
@@ -1343,7 +1393,7 @@ async function loadSharedHistory(){
 async function openDashboard(){
   const panel=document.getElementById("dashboardPanel");
   panel.hidden=false; setStatus("Analizando el histórico local…","info");
-  try{await analyzeHistory();panel.scrollIntoView({behavior:"smooth",block:"start"});setStatus("Dashboard actualizado.","ok");}
+  try{await analyzeHistory();await updateFileAlerts();panel.scrollIntoView({behavior:"smooth",block:"start"});setStatus("Dashboard actualizado.","ok");}
   catch(e){setStatus("No se pudo analizar el histórico.\\n\\n"+(e.message||String(e)),"err");}
 }
 function semCiclo(name){
